@@ -1,0 +1,12 @@
+{
+  "name": "js-starterkit",
+  "version": "1.0.0",
+  "description": "JavaScript StarterKit",
+  "scripts": {},
+  "author": "Hani",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "nsp": "^2.6.2"
+  }
+}
