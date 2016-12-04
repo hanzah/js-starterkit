@@ -7,6 +7,9 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "nsp": "^2.6.2"
+    "express": "^4.14.0",
+    "localtunnel": "^1.8.2",
+    "nsp": "^2.6.2",
+    "open": "0.0.5"
   }
 }
