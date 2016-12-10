@@ -12,8 +12,8 @@
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-		"test:watch": "npm run test -- --watch"
-	},
+    "test:watch": "npm run test -- --watch"
+  },
   "author": "Hani",
   "license": "MIT",
   "dependencies": {},
@@ -28,6 +28,7 @@
     "cheerio": "^0.22.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.11.1",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-watch": "^2.1.14",
     "express": "^4.14.0",
     "jsdom": "^9.8.3",
