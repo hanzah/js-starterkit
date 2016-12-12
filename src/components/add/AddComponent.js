@@ -2,10 +2,6 @@ import React, { PropTypes } from 'react'
 
 const { func } = PropTypes
 
-Add.propTypes = {
-	onAdd: func
-}
-
 export default class Add extends React.Component {
     constructor(props) {
       super(props);
@@ -34,4 +30,8 @@ export default class Add extends React.Component {
         </form>
       );
     }
+}
+
+Add.propTypes = {
+	onAdd: func
 }

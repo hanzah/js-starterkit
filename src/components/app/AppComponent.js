@@ -4,10 +4,6 @@ import List from '../list'
 
 const { func } = PropTypes
 
-App.propTypes = {
-	onAdd: func
-}
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,4 +27,8 @@ export default class App extends React.Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+	onAdd: func
 }

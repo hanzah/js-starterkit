@@ -2,9 +2,13 @@
 <html land="en">
 	<head>
 		<meta charset="UTF-8">
+		<%if(htmlWebpackPlugin.options.SENTRY_TOKEN) {%>
+			<script>
+				console.log('Added sentry');
+			</script>
+		<%}%>
 	</head>
 	<body>
 		<h1>Hello World!</h1>
-		<script src="bundle.js"></script>
-	</body>
+	<script type="text/javascript" src="/bundle.js"></script></body>
 </html>

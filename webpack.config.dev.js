@@ -1,5 +1,5 @@
-// import webpack from 'webpack';
 import path from 'path';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	debug: true,
@@ -17,7 +17,12 @@ export default {
 	devServer: {
 		contentBase: path.resolve(__dirname, 'src')
 	},
-	plugins: [],
+	plugins: [
+		new HTMLWebpackPlugin({
+			template: 'src/index.html',
+			inject: true
+		})
+	],
 	module: {
 		loaders: [
 			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},

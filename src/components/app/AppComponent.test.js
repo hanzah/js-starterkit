@@ -5,11 +5,12 @@ import App from './index'
 describe('App', () => {
   let app;
 
-  before(() => {
+  beforeEach(() => {
     app = shallow(<App />);
   });
 
 	it('App renders nested components', () => {
+		expect(app).toMatchSnapshot();
 		expect(app.find('Add').length).toEqual(1);
 		expect(app.find('List').length).toEqual(1);
 	});
