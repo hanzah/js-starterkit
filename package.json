@@ -14,7 +14,6 @@
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
-    "prestart-mockapi": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch server/mockAPI/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
