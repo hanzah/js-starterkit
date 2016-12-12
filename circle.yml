@@ -1,5 +1,5 @@
 test:
   override:
     - npm run lint
-		-npm start-mockapi
+    -npm start-mockapi
     - npm run test
