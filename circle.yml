@@ -1,9 +1,5 @@
 test:
-	pre:
-		- npm start-mockapi
-			background: true
-		- sleep 5
   override:
     - npm run lint
-		-
+		-npm start-mockapi
     - npm run test
