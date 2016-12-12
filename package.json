@@ -11,6 +11,8 @@
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel",
+		"wait-for-mock": "babel-node buildScripts/waitForMock.js",
+    "test:wait-for-mock": "run-s wait-for-mock test",
     "test": "jest --coverage",
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
@@ -60,6 +62,7 @@
     "react-test-renderer": "^15.4.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
+    "wait-for-port": "0.0.2",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-md5-hash": "0.0.5"
