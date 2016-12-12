@@ -1,6 +1,6 @@
 test:
   pre:
-    - npm run start-mockapi
+    - npm run start-mockapi:
       background: true
     - sleep 5
   override:
