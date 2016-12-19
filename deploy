@@ -14,8 +14,13 @@ fi
 
 SERVICE="mission-control-portal"
 CLUSTER="mission-control-portal-${TARGET_ENV}"
-
 ECR_PATH_NAME=ECR_PATH_${TARGET_ENV}
+
+echo $AWS_ACCESS_KEY_ID_testing
+echo $AWS_SECRET_ACCESS_KEY_testing
+echo $AWS_REGION_testing
+echo $ECR_PATH_testing
+echo ${!ECR_PATH_NAME}
 
 configure_aws_cli(){
 	aws --version
