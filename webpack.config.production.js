@@ -15,18 +15,18 @@ export default {
 	},
 	target: 'web',
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'dist-production'),
 		publicPath: '/',
 		filename: "[name].[chunkhash].js"
-	},
-	devServer: {
-		contentBase: path.resolve(__dirname, 'src')
 	},
 	plugins: [
 		new ExtractTextPlugin("[name].[chunkhash].css"),
 		new WebpackMd5Hash(),
 		new webpack.optimize.DedupePlugin(),
 		new webpack.DefinePlugin({
+			'GLOBALS': {
+				FRONT_ENV: JSON.stringify('production')
+			},
 			'process.env': {
 				NODE_ENV: JSON.stringify('production')
 			}
@@ -47,7 +47,7 @@ export default {
 				minifyCSS: true,
 				minifyURLs: true
 			},
-			SENTRY_TOKEN: 'TEST TOKEN'
+			SENTRY_TOKEN: 'PRODUCTION TEST TOKEN'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'

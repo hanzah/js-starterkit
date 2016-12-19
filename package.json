@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "JavaScript StarterKit",
   "scripts": {
+		"prebuild": "npm run clean-dist",
+		"build": "babel-node buildScripts/build.js",
+		"build:testing": "NODE_ENV=testing npm run build",
+		"build:staging": "NODE_ENV=staging npm run build",
+		"build:production": "NODE_ENV=production npm run build",
+		"dist-server:testing": "NODE_ENV=testing babel-node buildScripts/distServer.js",
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node buildScripts/srcServer.js",
@@ -17,10 +23,7 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
     "start-mockapi": "json-server --watch server/mockAPI/db.json --port 3001",
-    "clean-dist": "rimraf ./dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist test lint",
-    "build": "babel-node buildScripts/build.js",
-    "postbuild": "babel-node buildScripts/distServer.js"
+    "clean-dist": "rimraf ./dist-testing ./dist-staging ./dist-production && mkdir dist-testing dist-staging dist-production"
   },
   "author": "Hani",
   "license": "MIT",

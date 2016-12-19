@@ -1,0 +1,96 @@
+# more bash-friendly output for jq
+JQ="jq --raw-output --exit-status"
+
+if [[ -n $1 ]]; then
+    if [ "$1" == "production" ] || [ "$1" == "staging" ] || [ "$1" == "testing" ]; then
+        TARGET_ENV=$1
+    else
+        echo "ERROR: Unkown environment $1"
+        exit 1
+    fi
+else
+    TARGET_ENV="testing"
+fi
+
+SERVICE="mission-control-portal"
+CLUSTER="mission-control-portal-${TARGET_ENV}"
+
+ECR_PATH_NAME=ECR_PATH_${TARGET_ENV}
+
+configure_aws_cli(){
+	aws --version
+  if [ $TARGET_ENV == "testing" ]; then
+    aws configure set default.aws_access_key_id $AWS_ACCESS_KEY_ID_testing
+    aws configure set default.aws_secret_access_key $AWS_SECRET_ACCESS_KEY_testing
+		aws configure set default.region $AWS_REGION_testing
+	else
+    aws configure set default.aws_access_key_id $AWS_ACCESS_KEY_ID_production
+    aws configure set default.aws_secret_access_key $AWS_SECRET_ACCESS_KEY_production
+		aws configure set default.region $AWS_REGION_production
+  fi
+	aws configure set default.output json
+}
+
+prepare_docker_image(){
+	echo "Build Docker Image"
+	docker build --build-arg app_env=${TARGET_ENV} -t mission-control-portal:${TARGET_ENV} .
+
+	echo "Tag Docker Image in AWS ECR"
+	docker tag mission-control-portal:${TARGET_ENV} ${!ECR_PATH_NAME}
+
+	echo "Clean-up AWS ECR"
+	aws ecr batch-delete-image --repository-name mission-control-portal --image-ids imageTag=mission-control-portal-${TARGET_ENV}
+
+	echo "Upload New Image to AWS ECR"
+	docker push ${!ECR_PATH_NAME}
+}
+
+register_task_def(){
+	task_template='[
+		{
+			"name": "mission-control-portal-%s",
+			"image": "%s",
+			"essential": true,
+			"memory": 200,
+			"cpu": 10,
+			"portMappings": [
+				{
+					"containerPort": 80,
+					"hostPort": 80
+				}
+			]
+		}]
+	'
+
+	task_def=$(printf "$task_template" $TARGET_ENV ${!ECR_PATH_NAME})
+
+	echo "Update AWS ECS Task"
+	revision=$(aws ecs register-task-definition --container-definitions "$task_def" --family "mission-control-portal-${TARGET_ENV}-family" | $JQ '.taskDefinition.taskDefinitionArn')
+}
+
+deploy_task(){
+	if [[ $(aws ecs update-service --cluster $CLUSTER --service $SERVICE --task-definition $revision | \
+							 $JQ '.service.taskDefinition') != $revision ]]; then
+		echo "Error updating service."
+		return 1
+	fi
+}
+
+configure_aws_cli
+
+aws ecr get-login |sed "s/-e none //"| bash 2>&1 > /dev/null
+
+echo "Compile Assets"
+if [ "${TARGET_ENV}" == "testing" ]; then
+    npm run build:testing
+elif [ "${TARGET_ENV}" == "staging" ]; then
+    npm run build:staging
+else
+    npm run build
+fi
+
+prepare_docker_image
+register_task_def
+deploy_task
+
+echo "Done"

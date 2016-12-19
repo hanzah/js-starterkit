@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import webpack from 'webpack';
-import webpackConfig from '../webpack.config.prod';
 import chalk from 'chalk';
 
-process.env.Node_ENV = 'production';
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-console.log(chalk.blue('Generating minified bundle for production...'));
+const webpackConfig = require(`../webpack.config.${process.env.NODE_ENV}`);
 
-webpack(webpackConfig).run((err, stats) => {
+console.log(chalk.blue(`Generating minified bundle for ${process.env.NODE_ENV}...`));
+
+webpack(webpackConfig.default).run((err, stats) => {
 	if(err) {
 		console.log(chalk.red(err));
 		return 1;
@@ -26,7 +27,8 @@ webpack(webpackConfig).run((err, stats) => {
 
 	console.log(`Webpack stats: ${stats}`);
 
-	console.log(chalk.green('Your app has been build for production and written to /dist!'));
+	console.log(chalk.green(`Your app has been build for ${process.env.NODE_ENV}
+		                      	and written to /dist!`));
 
 	return 0;
 })

@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import path from 'path';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 
@@ -18,6 +19,14 @@ export default {
 		contentBase: path.resolve(__dirname, 'src')
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'GLOBALS': {
+				FRONT_ENV: JSON.stringify('dev')
+			},
+			'process.env': {
+				NODE_ENV: JSON.stringify('testing')
+			}
+		}),
 		new HTMLWebpackPlugin({
 			template: 'src/index.html',
 			inject: true

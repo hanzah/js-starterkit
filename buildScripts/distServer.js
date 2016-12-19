@@ -9,7 +9,7 @@ const port = 3000;
 const app = express();
 
 app.use(compression());
-app.use(express.static('dist'));
+app.use(express.static(`dist-${process.env.NODE_ENV}`));
 
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname, '../dist/index.html'));
