@@ -83,7 +83,7 @@ deploy_task(){
 
 configure_aws_cli
 
-aws ecr get-login |sed "s/-e none //"| bash 2>&1 > /dev/null
+aws ecr get-login
 
 echo "Compile Assets"
 if [ "${TARGET_ENV}" == "testing" ]; then
