@@ -83,7 +83,7 @@ deploy_task(){
 
 configure_aws_cli
 
-aws ecr get-login
+aws ecr get-login | pbcopy
 
 echo "Compile Assets"
 if [ "${TARGET_ENV}" == "testing" ]; then
