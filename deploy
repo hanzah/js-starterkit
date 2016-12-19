@@ -39,7 +39,7 @@ prepare_docker_image(){
 	docker tag mission-control-portal:${TARGET_ENV} ${!ECR_PATH_NAME}
 
 	echo "Clean-up AWS ECR"
-	aws ecr batch-delete-image --repository-name mission-control-portal --image-ids imageTag=mission-control-portal-${TARGET_ENV}
+	aws ecr batch-delete-image --repository-name mission-control-portal --image-ids imageTag=portal-${TARGET_ENV}
 
 	echo "Upload New Image to AWS ECR"
 	docker push ${!ECR_PATH_NAME}
