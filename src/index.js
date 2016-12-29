@@ -1,12 +1,25 @@
-/* global GLOBALS */
 import React from 'react'
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Router, applyRouterMiddleware, browserHistory } from 'react-router'
+import routes from 'routes'
+import ThemeCSSLink from 'utils/ThemeCSSLink'
+import CurrentContext from 'utils/currentContext'
+import { getTheme } from 'utils/constants'
 
 class Root extends React.Component {
+	constructor(props) {
+		super(props)
+		CurrentContext.theme = getTheme()
+	}
+
   render() {
     return (
-      <div>Hello {GLOBALS.FRONT_ENV}</div>
+			<element>
+				<ThemeCSSLink theme={CurrentContext.theme} />
+				<Router history={browserHistory} render={applyRouterMiddleware()}>
+					{ routes() }
+				</Router>
+			</element>
     );
   }
 }
