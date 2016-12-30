@@ -1,5 +1,5 @@
 const SUBDOMAINS = ['gm']
-const LOCALES = ['en-US', 'en-CA', 'es']
+const LOCALES = ['en-us', 'en-ca', 'es-es']
 
 export default {
 	screen_sm_max: 767,
@@ -17,8 +17,13 @@ export const getTheme = () => {
 }
 
 export const getLocale = () => {
+	let subdomainLocale = location.hostname.split('.')[1]
+	if(LOCALES.includes(subdomainLocale)) {
+		const parts = subdomainLocale.split('-')
+		return `${parts[0]}-${parts[1].toUpperCase()}`
+	}
 	const locale = navigator.language
-	if(LOCALES.includes(locale)) {
+	if(LOCALES.includes(locale.toLowerCase())) {
 		return locale
 	}
 	return 'en-US'
