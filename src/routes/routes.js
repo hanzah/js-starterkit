@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router'
-import SimCardsView from '../views/SimCardsView'
+import SimCardsView from 'views/SimCardsView'
 
 /* eslint-disable react/display-name */
 export default () => (
