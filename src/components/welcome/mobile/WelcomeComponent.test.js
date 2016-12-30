@@ -5,13 +5,13 @@ import WelcomeComponent from './WelcomeComponent'
 
 describe('Welcome (Snapshot)', () => {
   it('Welcome renders hello world', () => {
-    const component = renderer.create(<WelcomeComponent name="word"/>);
+    const component = renderer.create(<WelcomeComponent name="world"/>);
     const json = component.toJSON();
     expect(json).toMatchSnapshot();
   });
 
 	it('Welcome renders hello world with Enzyme', () => {
-		const welcome = shallow(<WelcomeComponent name="word"/>);
+		const welcome = shallow(<WelcomeComponent name="world"/>);
     expect(welcome.find('div').text()).toBe('Hello world');
   });
 });
