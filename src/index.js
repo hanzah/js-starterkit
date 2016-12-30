@@ -1,27 +1,38 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom';
 import { Router, applyRouterMiddleware, browserHistory } from 'react-router'
+import { IntlProvider } from 'react-intl';
 import routes from 'routes'
 import ThemeCSSLink from 'utils/ThemeCSSLink'
 import CurrentContext from 'utils/currentContext'
-import { getTheme } from 'utils/constants'
+import { getTheme, getLocale } from 'utils/constants'
+import { loadLanguages } from 'utils/localization'
 
-class Root extends React.Component {
-	constructor(props) {
-		super(props)
-		CurrentContext.theme = getTheme()
-	}
+const renderedRoutes = routes()
 
-  render() {
-    return (
-			<element>
-				<ThemeCSSLink theme={CurrentContext.theme} />
-				<Router history={browserHistory} render={applyRouterMiddleware()}>
-					{ routes() }
-				</Router>
-			</element>
-    );
-  }
+const { object } = PropTypes
+
+const Root = ({ messages }) => {
+  return (
+		<element>
+			<ThemeCSSLink theme={CurrentContext.theme} />
+				<IntlProvider
+					locale={CurrentContext.locale}
+					messages={messages}
+				>
+					<Router history={browserHistory} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
+				</IntlProvider>
+		</element>
+  );
 }
 
-ReactDOM.render(<Root />, document.getElementById('react-root'));
+Root.propTypes = {
+	messages: object
+}
+
+CurrentContext.theme = getTheme()
+CurrentContext.locale = getLocale()
+
+loadLanguages(CurrentContext.theme, CurrentContext.locale).then(({ messages }) => {
+	ReactDOM.render(<Root messages={messages}/>, document.getElementById('react-root'));
+})

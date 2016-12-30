@@ -6,3 +6,4 @@ import react from 'react';
 import reactdom from 'react-dom';
 import reactResponsive from 'react-responsive';
 import { Route, Redirect, Router, applyRouterMiddleware, browserHistory } from 'react-router';
+import { addLocaleData } from 'react-intl';
