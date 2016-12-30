@@ -10,7 +10,7 @@
     "build:production": "NODE_ENV=production npm run build",
     "dist-server:testing": "NODE_ENV=testing babel-node buildScripts/distServer.js",
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel open:src",
+    "start": "npm-run-all --parallel lint open:src",
     "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "esw --color webpack.config.* src buildScripts",
     "lint:watch": "npm run lint -- --watch",
@@ -29,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
