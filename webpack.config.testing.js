@@ -5,8 +5,6 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import multi from 'multi-loader';
 
-console.log(path.resolve(__dirname, 'src'))
-
 const defaultStyles = new ExtractTextPlugin("styles.css");
 const gmStyles = new ExtractTextPlugin("styles_gm.css");
 
