@@ -28,3 +28,7 @@ export const getLocale = () => {
 	}
 	return 'en-US'
 }
+
+export const getThemeCss = (theme) => {
+ 	return (theme == 'default') ? '/styles.css' : `/styles_${theme}.css`
+}
