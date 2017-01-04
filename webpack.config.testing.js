@@ -23,7 +23,7 @@ export default {
 		filename: "[name].[chunkhash].js"
 	},
 	resolve: {
-    root: path.resolve(__dirname, 'src/'),
+    root: path.resolve(__dirname, 'src'),
 		modulesDirectories: ['node_modules']
 	},
 	plugins: [

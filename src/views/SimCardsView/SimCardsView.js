@@ -1,9 +1,9 @@
 import React from 'react'
+import { DesktopMediaQuery, TabletMediaQuery, MobileMediaQuery } from 'utils/CustomMediaQuery'
 import {  DesktopWelcomeComponent,
 					TabletWelcomeComponent,
 					MobileWelcomeComponent
 				} from 'components/Welcome'
-import { DesktopMediaQuery, TabletMediaQuery, MobileMediaQuery } from 'utils/CustomMediaQuery'
 
 export default class Welcome extends React.Component {
   render() {
