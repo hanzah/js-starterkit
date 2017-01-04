@@ -89,19 +89,8 @@
     "webpack-md5-hash": "0.0.5"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ],
     "moduleNameMapper": {
       "\\.(css|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
     }
   }
 }
