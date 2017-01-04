@@ -30,5 +30,5 @@ export const getLocale = () => {
 }
 
 export const getThemeCss = (theme) => {
- 	return (theme == 'default') ? '/styles.css' : `/styles_${theme}.css`
+	return (theme == 'default') ? '/styles.css' : `/styles_${theme}.css`
 }
