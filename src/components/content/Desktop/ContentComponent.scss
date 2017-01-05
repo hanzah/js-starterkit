@@ -1,0 +1,10 @@
+@import "~components/content/ContentComponent";
+
+.mc_content{
+    float:left;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    box-shadow: -3px 0px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
