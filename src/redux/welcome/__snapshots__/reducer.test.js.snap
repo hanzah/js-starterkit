@@ -1,0 +1,11 @@
+exports[`Welcome Reducer should return changed state 1`] = `
+Object {
+  "message": "Message Changed",
+}
+`;
+
+exports[`Welcome Reducer should return initial state 1`] = `
+Object {
+  "message": "Initial message",
+}
+`;
