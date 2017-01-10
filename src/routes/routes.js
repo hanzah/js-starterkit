@@ -1,14 +1,17 @@
 import React from 'react'
 import { Route, Redirect, IndexRoute } from 'react-router'
 import SimCardsView from 'views/SimCardsView'
-import SimCardLayout from 'views/SimCardLayout'
-import SimsOverviewView from 'views/SimsOverviewView'
+import MainLayout from 'layouts/MainLayout'
+import SimsLayout from 'layouts/SimsLayout'
+import SimsIndexView from 'views/SimsIndexView'
 
 /* eslint-disable react/display-name */
 export default () => (
-    <Route path='/' component={SimCardLayout}>
-      <IndexRoute component={SimCardsView} />
-    <Route path="/sims" component={SimsOverviewView} />
+    <Route path='/' component={MainLayout}>
+			<Route path="sims" component={SimsLayout} >
+				<IndexRoute component={SimsIndexView} />
+			</Route>
+			<IndexRoute component={SimCardsView} />
       <Redirect from='*' to='/' />
     </Route>
 )

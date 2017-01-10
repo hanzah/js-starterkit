@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom';
 import { Router, applyRouterMiddleware, browserHistory } from 'react-router'
 import { IntlProvider } from 'react-intl';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import theme from 'lib/material-ui/theme'
 import routes from 'routes'
 import CurrentContext from 'utils/currentContext'
 import { getTheme, getLocale, getThemeCss } from 'utils/constants'
@@ -18,7 +21,9 @@ const Root = ({ messages }) => {
 				locale={CurrentContext.locale}
 				messages={messages}
 			>
-				<Router history={browserHistory} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
+				<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+					<Router history={browserHistory} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
+				</MuiThemeProvider>
 			</IntlProvider>
 		</element>
   );
