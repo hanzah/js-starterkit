@@ -1,0 +1,1 @@
+export const SIMS_SELECTED = 'SIMS_SELECTED'

@@ -10,7 +10,7 @@
     "build:production": "NODE_ENV=production npm run build",
     "dist-server:testing": "NODE_ENV=testing babel-node buildScripts/distServer.js",
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel lint open:src",
+    "start": "npm-run-all --parallel lint:watch open:src",
     "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "esw --color webpack.config.* src buildScripts",
     "lint:watch": "npm run lint -- --watch",
@@ -43,12 +43,17 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-intl": "^2.2.2",
+    "react-redux": "^5.0.1",
     "react-responsive": "^1.2.5",
     "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
     "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.0",
+    "redux-form": "^6.4.3",
+    "redux-thunk": "^2.1.0",
     "sass-loader": "^4.1.1",
-    "url-loader": "^0.5.7",
-    "redux-actions": "^1.2.0"
+    "url-loader": "^0.5.7"
   },
   "devDependencies": {
     "axios": "^0.15.3",

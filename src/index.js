@@ -1,32 +1,44 @@
 import React, { PropTypes } from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+
 import { Router, applyRouterMiddleware, browserHistory } from 'react-router'
-import { IntlProvider } from 'react-intl';
+import { syncHistoryWithStore } from 'react-router-redux'
+
+import store from 'redux/store'
+import routes from 'routes'
+
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import theme from 'lib/material-ui/theme'
-import routes from 'routes'
+
+
 import CurrentContext from 'utils/currentContext'
 import { getTheme, getLocale, getThemeCss } from 'utils/constants'
+import { IntlProvider } from 'react-intl'
 import { loadLanguages } from 'utils/localization'
 
-const renderedRoutes = routes()
+const history = syncHistoryWithStore(browserHistory, store)
+
+const renderedRoutes = routes(store)
 
 const { object } = PropTypes
 
-const Root = ({ messages }) => {
-  return (
-		<element>
-			<IntlProvider
-				locale={CurrentContext.locale}
-				messages={messages}
-			>
-				<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
-					<Router history={browserHistory} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
-				</MuiThemeProvider>
-			</IntlProvider>
-		</element>
-  );
+class Root extends React.Component {
+	render() {
+		return (
+			<Provider store={store}>
+				<IntlProvider
+					locale={CurrentContext.locale}
+					messages={this.props.messages}
+				>
+					<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+						<Router history={history} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
+					</MuiThemeProvider>
+				</IntlProvider>
+			</Provider>
+		);
+	}
 }
 
 Root.propTypes = {

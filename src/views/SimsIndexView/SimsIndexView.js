@@ -1,12 +1,12 @@
 import React from 'react'
 import { DesktopMediaQuery } from 'utils/CustomMediaQuery'
-import { DesktopSimsOverviewComponent } from 'components/simsoverview'
+import { DesktopSimsOverview } from 'components/simsoverview'
 
 const SimsIndexView = () => {
   return (
 		<element>
 			<DesktopMediaQuery>
-				<DesktopSimsOverviewComponent name="desktop"/>
+				<DesktopSimsOverview name="desktop"/>
 			</DesktopMediaQuery>
 		</element>
   );

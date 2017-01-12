@@ -3,7 +3,6 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import styles from './HeaderComponent.scss';
 injectTapEventPlugin();
@@ -23,7 +22,6 @@ class UserMenu extends Component {
     render() {
         return (
             <div className={styles.user_menu_position}>
-                <MuiThemeProvider>
                     <IconMenu
                         iconButtonElement={<IconButton iconStyle={iconStyles.userIcon}
                             style={iconStyles.userButton}><MoreVertIcon /></IconButton>}
@@ -33,7 +31,6 @@ class UserMenu extends Component {
                         <MenuItem primaryText="Edit Graphs view" />
                         <MenuItem primaryText="Edit SIMs list view" />
                     </IconMenu>
-                </MuiThemeProvider>
             </div>
         );
     }
