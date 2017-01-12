@@ -33,7 +33,6 @@ class SimTable extends React.Component {
 					</TableHeader>
 					<TableBody deselectOnClickaway={false}>
 						{this.renderSims()}
-						{this.renderDummy()}
 					</TableBody>
 				</Table>
 			</div>
@@ -67,8 +66,9 @@ class SimTable extends React.Component {
 
 	renderSims(){
 		return this.props.sims.map((sim) => {
+			const selected = !!this.props.selectedSims[sim.number]
 			return (
-				<TableRow key={sim.number} selected={!!this.props.selectedSims[sim.number]}>
+				<TableRow key={sim.number} selected={selected}>
 					<TableRowColumn>{sim.number}</TableRowColumn>
 					<TableRowColumn>{sim.plan}</TableRowColumn>
 					<TableRowColumn>{sim.sessions}</TableRowColumn>
@@ -81,21 +81,6 @@ class SimTable extends React.Component {
 		})
 	}
 
-	renderDummy(){
-		//ToDo: Burn this once the table issues are resolved!!!
-		return (
-			<TableRow key={-1} selected style={{display: 'none'}}>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-				<TableRowColumn>-</TableRowColumn>
-			</TableRow>
-		)
-	}
-
 	onRowSelection = (selectedRows) => {
 		let sims;
 		switch(selectedRows) {
@@ -106,8 +91,6 @@ class SimTable extends React.Component {
 				sims = []
 				break;
 			default:
-				//ToDo: Because of the dirty hack. Remove it as well!!!
-				selectedRows.pop()
 				sims = selectedRows.map((index) => {
 					return this.props.sims[index]
 				})
