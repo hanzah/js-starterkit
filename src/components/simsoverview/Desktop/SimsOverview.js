@@ -36,15 +36,12 @@ class SimTable extends React.Component {
             </TableHeader>
             <TableBody deselectOnClickaway={false}>
               {this.renderSims()}
-              {/* {this.renderDummy()}*/}
             </TableBody>
           </Table>
         </div>
       </div>
     );
   }
-
-
 
   renderHeader() {
     return (
@@ -74,21 +71,6 @@ class SimTable extends React.Component {
         </TableRow>
       )
     })
-  }
-
-  renderDummy() {
-    //ToDo: Burn this once the table issues are resolved!!!
-    return (
-      <TableRow key={-1} selected style={{ display: 'none' }}>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-        <TableRowColumn>-</TableRowColumn>
-      </TableRow>
-    )
   }
 
   onRowSelection = (selectedRows) => {
