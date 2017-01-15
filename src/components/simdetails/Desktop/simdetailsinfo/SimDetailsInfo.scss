@@ -1,0 +1,27 @@
+.siminfo_wrap {
+  table {
+    >tbody {
+      >tr {
+        border-bottom: none !important;
+      }
+    }
+  }
+  .table_wrap_top {
+    height: 60px;
+    overflow: hidden;
+    border-bottom: 2px solid rgb(242, 242, 242);
+    transition: all 0.5s ease;
+  }
+  .table_wrap_bottom {
+    height: 40px;
+    overflow: hidden;
+  }
+  &.show {
+    .table_wrap_top {
+      height: 192px;
+    }
+    .table_wrap_bottom {
+      height: 96px;
+    }
+  }
+}

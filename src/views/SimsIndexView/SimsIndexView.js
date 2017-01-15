@@ -1,14 +1,18 @@
 import React from 'react'
 import { DesktopMediaQuery } from 'utils/CustomMediaQuery'
 import { DesktopSimsOverview } from 'components/simsoverview'
+import { DesktopHeader } from 'components/header'
 
 const SimsIndexView = () => {
   return (
-		<element>
-			<DesktopMediaQuery>
-				<DesktopSimsOverview name="desktop"/>
-			</DesktopMediaQuery>
-		</element>
+    <element>
+      <DesktopMediaQuery>
+        <DesktopHeader name="desktop" />
+      </DesktopMediaQuery>
+      <DesktopMediaQuery>
+        <DesktopSimsOverview name="desktop" />
+      </DesktopMediaQuery>
+    </element>
   );
 }
 

@@ -1,36 +1,33 @@
 /* OmnesATT */
 
-
 @font-face {
-    font-family: 'omnesatt_iiregular';
-    src: url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.eot');
-    src: url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		     url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.woff2') format('woff2'),
-				 url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.woff') format('woff'),
-				 url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'omnesatt_iiregular';
+  src: url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.eot');
+  src: url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.eot?#iefix') format('embedded-opentype'), url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.woff2') format('woff2'), url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.woff') format('woff'), url('brands/default/styles/fonts/omnes_att_ii-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'omnes_att_iimedium';
-    src: url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.eot');
-    src: url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.eot?#iefix') format('embedded-opentype'),
-		     url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.woff2') format('woff2'),
-				 url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.woff') format('woff'),
-         url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'omnes_att_iimedium';
+  src: url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.eot');
+  src: url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.eot?#iefix') format('embedded-opentype'), url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.woff2') format('woff2'), url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.woff') format('woff'), url('brands/default/styles/fonts/omnes_att_ii_medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'omnes_att_iilight';
+  src: url('brands/default/styles/fonts/omnes_att_ii_light-webfont.eot');
+  src: url('brands/default/styles/fonts/omnes_att_ii_light-webfont.eot?#iefix') format('embedded-opentype'), url('brands/default/styles/fonts/omnes_att_ii_light-webfont.woff2') format('woff2'), url('brands/default/styles/fonts/omnes_att_ii_light-webfont.woff') format('woff'), url('brands/default/styles/fonts/omnes_att_ii_light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'omnes_att_iilight';
-    src: url('brands/default/styles/fonts/omnes_att_ii_light-webfont.eot');
-    src: url('brands/default/styles/fonts/omnes_att_ii_light-webfont.eot?#iefix') format('embedded-opentype'),
-		     url('brands/default/styles/fonts/omnes_att_ii_light-webfont.woff2') format('woff2'),
-				 url('brands/default/styles/fonts/omnes_att_ii_light-webfont.woff') format('woff'),
-				 url('brands/default/styles/fonts/omnes_att_ii_light-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'omnes_att_iibold';
+  src: url('brands/default/styles/fonts/omnes_att_ii_bold-webfont.eot');
+  src: url('brands/default/styles/fonts/omnes_att_ii_bold-webfont.eot?#iefix') format('embedded-opentype'), url('brands/default/styles/fonts/omnes_att_ii_bold-webfont.woff2') format('woff2'), url('brands/default/styles/fonts/omnes_att_ii_bold-webfont.woff') format('woff'), url('brands/default/styles/fonts/omnes_att_ii_bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

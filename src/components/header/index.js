@@ -1,3 +1,3 @@
-import Desktop from './desktop/HeaderComponent'
+import Desktop from './desktop/Header';
 
-export const DesktopHeaderComponent = Desktop
+export const DesktopHeader = Desktop

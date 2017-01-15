@@ -1,6 +1,16 @@
-.mc_global_container{
-    float: left;
-    width: 100%;
-    height: auto;
-    padding-left:130px;
+.mc_global_container {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding-left: 130px;
+}
+
+.component_wrapper {
+  float: left;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  box-shadow: -3px 0px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 20;
 }
