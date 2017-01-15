@@ -1,13 +1,11 @@
-import React, { PropTypes } from 'react';
-import cn from 'classnames';
+import React from 'react';
 
 import styles from './SimOptions.scss';
 
-const {bool} = PropTypes;
 
-const SimOptions = (props) => {
+const SimOptions = () => {
   return (
-    <div className={cn(styles.action_buttons_bar, props.showClass ? styles.show : '')}>
+    <div className={styles.action_buttons_bar}>
       <div className={styles.buttons}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +51,3 @@ const SimOptions = (props) => {
 }
 
 export default SimOptions;
-
-SimOptions.propTypes = {
-  showClass: bool
-}

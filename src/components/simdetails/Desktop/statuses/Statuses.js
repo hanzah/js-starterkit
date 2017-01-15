@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component, PropTypes} from 'react';
 import cn from 'classnames';
 import styles from './Statuses.scss';
+
+const {string, func} = PropTypes;
 
 export class FirstStatus extends Component {
   render() {
@@ -19,19 +21,29 @@ export class FirstStatus extends Component {
   }
 }
 
+FirstStatus.propTypes = {
+  addedClass: string,
+  handleStatusChange: func,
+  status: string
+}
+
 export class Status extends Component {
   render() {
     return (
       <div
         className={cn(styles.circle, styles[this.props.status])}
         onClick={() => {
-          this.props.handleStatusChange(this.props.status);
-        } }>
+        this
+          .props
+          .handleStatusChange(this.props.status);
+      }}>
         <span>{this.props.status}</span>
       </div>
     );
   }
 }
 
-
-
+Status.propTypes = {
+  status: string,
+  handleStatusChange: func
+}

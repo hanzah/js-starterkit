@@ -1,11 +1,19 @@
-import React, { PropTypes } from 'react';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import React, {PropTypes} from 'react';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from 'material-ui/Table';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 import SimOptions from './simoptions';
 import cn from 'classnames';
 
 import styles from './SimsOverview.scss';
 
-const { array, func, object, bool } = PropTypes
+const {array, func, object, bool} = PropTypes
 
 const statusClass = (status) => {
   const isActive = status === 'ACTIVE'
@@ -22,15 +30,26 @@ class SimTable extends React.Component {
   render() {
     return (
       <div>
-        <SimOptions showClass={this.props.showOptions} />
+        <ReactCSSTransitionGroup
+          transitionName={{
+          enter: styles.appear,
+          enterActive: styles.appear_active,
+          leave: styles.leave,
+          leaveActive: styles.leave_active
+        }}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
+
+          {this.props.showOptions ? <SimOptions/> : ''}
+
+        </ReactCSSTransitionGroup>
         <div className={styles.table_wrap}>
           <div className={styles.div_shadow}></div>
           <Table
             className={styles.mc_sim_table}
             fixedHeader
             multiSelectable
-            onRowSelection={this.onRowSelection}
-            >
+            onRowSelection={this.onRowSelection}>
             <TableHeader>
               {this.renderHeader()}
             </TableHeader>
@@ -59,18 +78,18 @@ class SimTable extends React.Component {
 
   renderSims() {
     return this.props.sims.map((sim) => {
-      return (
-        <TableRow key={sim.number} selected={!!this.props.selectedSims[sim.number]}>
-          <TableRowColumn>{sim.number}</TableRowColumn>
-          <TableRowColumn>{sim.plan}</TableRowColumn>
-          <TableRowColumn>{sim.sessions}</TableRowColumn>
-          <TableRowColumn>{sim.ipAddress}</TableRowColumn>
-          <TableRowColumn>{sim.network}</TableRowColumn>
-          <TableRowColumn>{sim.country}</TableRowColumn>
-          <TableRowColumn className={statusClass(sim.status)}>{sim.status}</TableRowColumn>
-        </TableRow>
-      )
-    })
+        return (
+          <TableRow key={sim.number} selected={!!this.props.selectedSims[sim.number]}>
+            <TableRowColumn>{sim.number}</TableRowColumn>
+            <TableRowColumn>{sim.plan}</TableRowColumn>
+            <TableRowColumn>{sim.sessions}</TableRowColumn>
+            <TableRowColumn>{sim.ipAddress}</TableRowColumn>
+            <TableRowColumn>{sim.network}</TableRowColumn>
+            <TableRowColumn>{sim.country}</TableRowColumn>
+            <TableRowColumn className={statusClass(sim.status)}>{sim.status}</TableRowColumn>
+          </TableRow>
+        )
+      })
   }
 
   onRowSelection = (selectedRows) => {
@@ -83,13 +102,14 @@ class SimTable extends React.Component {
         sims = []
         break;
       default:
-        //ToDo: Because of the dirty hack. Remove it as well!!!
-        //selectedRows.pop()
+        //ToDo: Because of the dirty hack. Remove it as well!!! selectedRows.pop()
         sims = selectedRows.map((index) => {
           return this.props.sims[index]
         })
     }
-    this.props.onRowSelection(sims)
+    this
+      .props
+      .onRowSelection(sims)
   }
 }
 
