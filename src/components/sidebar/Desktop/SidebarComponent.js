@@ -5,7 +5,7 @@ import ImageSelector from 'utils/ImageSelector'
 import SidebarItem from '../sidebaritem'
 
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
-const simIcon = ImageSelector(CurrentContext.theme, 'svgs/sim.svg');
+const SimIcon = ImageSelector(CurrentContext.theme, 'svgs/sim.svg');
 
 
 class Sidebar extends Component {
@@ -17,7 +17,7 @@ class Sidebar extends Component {
         </div>
         <ul>
           <li>
-            <SidebarItem link='/sims' icon={simIcon} label='SIMS' />
+            <SidebarItem link='/sims' icon={<SimIcon/>} label='SIMS' />
           </li>
           <li>
             <a href="#" title="Devices">
@@ -73,7 +73,7 @@ class Sidebar extends Component {
             </a>
           </li>
           {/*  <li>
-            
+
                         <a href="#" title="Analytics">
                             <div>
                                 <svg
@@ -85,7 +85,7 @@ class Sidebar extends Component {
                                 <span>ANALYTICS</span>
                             </div>
                         </a>
-                        
+
           </li>
           */}
           <li>
@@ -115,7 +115,7 @@ class Sidebar extends Component {
               </div>
             </a>
           </li>
-          
+
           <li>
             <a href="#" title="Support">
               <div>

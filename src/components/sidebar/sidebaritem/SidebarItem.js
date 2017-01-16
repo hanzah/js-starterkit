@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import styles from './SidebarItem.scss'
 
-const { string } = PropTypes
+const { string, object } = PropTypes
 
 const SidebarItem = ({ link, icon, label }) => {
 	return (
 		<Link to={link} activeClassName={styles.active} >
 			<div>
-				<img src={icon} />
+				{icon}
 				<span>{label}</span>
 			</div>
 		</Link>
@@ -17,7 +17,7 @@ const SidebarItem = ({ link, icon, label }) => {
 
 SidebarItem.propTypes = {
  link: string,
- icon: string,
+ icon: object,
  label: string
 }
 
