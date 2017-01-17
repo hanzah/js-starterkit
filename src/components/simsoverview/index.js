@@ -6,7 +6,7 @@ import * as Selectors from 'redux/selectors'
 
 const mapStateToProps = (state) => {
 	const selectedSims = Selectors.getSelectedSims(state)
-	const showOptions = keys(selectedSims).length > 0
+	const showOptions = keys(selectedSims).length > 1
   return {
     sims: Selectors.getSims(state),
 		showOptions,

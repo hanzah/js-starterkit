@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import { FormattedMessage } from 'react-intl';
 import {
   Table,
   TableBody,
@@ -65,13 +66,13 @@ class SimTable extends React.Component {
   renderHeader() {
     return (
       <TableRow>
-        <TableHeaderColumn>SIM NUMBER</TableHeaderColumn>
-        <TableHeaderColumn>DATA RATE PLAN</TableHeaderColumn>
-        <TableHeaderColumn>ACTIVE SESSION</TableHeaderColumn>
-        <TableHeaderColumn>IP ADDRESS</TableHeaderColumn>
-        <TableHeaderColumn>NETWORK</TableHeaderColumn>
-        <TableHeaderColumn>COUNTRY</TableHeaderColumn>
-        <TableHeaderColumn>STATUS</TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="SIMNUMBER" defaultMessage="SIM NUMBER" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="DATARATEPLAN" defaultMessage="DATA RATE PLAN" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="ACTIVESESSION" defaultMessage="ACTIVE SESSION" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="IPADDRESS" defaultMessage="IP ADDRESS" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="NETWORK" defaultMessage="NETWORK" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="COUNTRY" defaultMessage="COUNTRY" /></TableHeaderColumn>
+        <TableHeaderColumn><FormattedMessage id="STATUS" defaultMessage="STATUS" /></TableHeaderColumn>
       </TableRow>
     )
   }
@@ -82,11 +83,11 @@ class SimTable extends React.Component {
           <TableRow key={sim.number} selected={!!this.props.selectedSims[sim.number]}>
             <TableRowColumn>{sim.number}</TableRowColumn>
             <TableRowColumn>{sim.plan}</TableRowColumn>
-            <TableRowColumn>{sim.sessions}</TableRowColumn>
+            <TableRowColumn>{sim.sessions} Mb</TableRowColumn>
             <TableRowColumn>{sim.ipAddress}</TableRowColumn>
             <TableRowColumn>{sim.network}</TableRowColumn>
             <TableRowColumn>{sim.country}</TableRowColumn>
-            <TableRowColumn className={statusClass(sim.status)}>{sim.status}</TableRowColumn>
+            <TableRowColumn className={statusClass(sim.status)}><div><span></span>{sim.status}</div></TableRowColumn>
           </TableRow>
         )
       })
@@ -106,6 +107,7 @@ class SimTable extends React.Component {
         sims = selectedRows.map((index) => {
           return this.props.sims[index]
         })
+      
     }
     this
       .props

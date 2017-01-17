@@ -1,5 +1,4 @@
-export default [
-	{
+export default [{
 		number: '8901170425230326675',
 		plan: 'AT&T Data Rate Plan',
 		sessions: 430,
