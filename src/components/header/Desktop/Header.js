@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import SearchBar from '../searchbar';
 import UserMenu from './UserMenu';
-import EditButton from './EditButton';
+import AddButton from '../addbutton';
 import cn from 'classnames';
+import { FormattedMessage } from 'react-intl';
+
 import styles from './Header.scss';
 
 class Header extends Component {
   render() {
     return (
-      <div className={styles.mc_header}>
+      <div className={styles.header}>
         <div className={styles.upper_header}>
           {this.renderMenu()}
           {this.renderTitle()}
@@ -16,7 +18,7 @@ class Header extends Component {
           {this.renderUserImage()}
           <SearchBar name='SIM' />
         </div>
-        <EditButton />
+        <AddButton />
       </div>
     );
   }
@@ -33,9 +35,13 @@ class Header extends Component {
 
   renderTitle() {
     return (
-      <div className={styles.page_title}>
-        <div className={styles.mc_title}>MISSION CONTROL</div>
-        <div className={styles.mc_section_title}>SIM management</div>
+      <div className={styles.title}>
+        <div className={styles.product_title}><FormattedMessage
+                    id="PRODUCT_TITLE"
+                /></div>
+        <div className={styles.section_title}><FormattedMessage
+                    id="SECTION_TITLE"
+                /></div>
       </div>
     )
   }

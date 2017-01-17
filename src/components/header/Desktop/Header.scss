@@ -1,5 +1,5 @@
 @import "~components/Header/Header";
-.mc_header {
+.header {
   background-image: -moz-linear-gradient( 45deg, rgb(0, 115, 188) 0%, rgb(0, 176, 235) 100%);
   background-image: -webkit-linear-gradient( 45deg, rgb(0, 115, 188) 0%, rgb(0, 176, 235) 100%);
   background-image: -ms-linear-gradient( 45deg, rgb(0, 115, 188) 0%, rgb(0, 176, 235) 100%);
@@ -27,11 +27,12 @@
   padding-top: 5px;
 }
 
-.page_title {
+.title {
   float: left;
   padding-left: 20px;
   padding-top: -10px;
-  .mc_title {
+
+  .product_title {
     font-family: 'omnes_att_iibold';
     font-size: 12px;
     color: rgb(255, 255, 255);
@@ -39,7 +40,8 @@
     line-height: 20%;
     padding-bottom: 5px;
   }
-  .mc_section_title {
+  
+  .section_title {
     font-family: 'omnesatt_iiregular';
     font-size: 24px;
     color: rgb(255, 255, 255);
@@ -80,45 +82,4 @@
   letter-spacing: 1px;
   display: inline-block;
   text-align: center;
-}
-
-.floater_button_possition {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateY(50%);
-  >div {
-    margin-right: 20px;
-  }
-}
-
-.floater_menu {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateY(50%);
-  >div {
-    margin-right: 20px;
-    >div:first-child {
-      >button {
-        background-color: #80c342 !important;
-      }
-    }
-    >div {
-      >div {
-        >button {
-          background-color: #ffffff !important;
-          >div {
-            >div {
-              >svg {
-                fill: #000000 !important;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }

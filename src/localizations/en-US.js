@@ -13,5 +13,7 @@ export default {
 	"IPADDRESS":"IP ADDRESS",
 	"NETWORK":"NETWORK",
 	"COUNTRY":"COUNTRY",
-	"STATUS":"STATUS"
+	"STATUS":"STATUS",
+  "PRODUCT_TITLE":"PRODUCT NAME",
+  "SECTION_TITLE":"Sim management"
 }

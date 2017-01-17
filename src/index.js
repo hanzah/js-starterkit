@@ -11,6 +11,8 @@ import routes from 'routes'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import theme from 'lib/material-ui/theme'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 
 import CurrentContext from 'utils/currentContext'

@@ -3,11 +3,8 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import styles from './Header.scss';
-
-injectTapEventPlugin();
 
 const menuStyles = {
   userIcon: {

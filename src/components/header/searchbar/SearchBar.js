@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className={styles.search_bar_position}>
+      <div className={styles.search_bar_position} data-spec='sarch-bar'>
         <div className={styles.search_bar}>
           <form onSubmit={this.props.onSubmit}>
             <img src={magnifier} alt="Search" />
