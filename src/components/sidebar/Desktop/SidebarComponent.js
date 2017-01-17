@@ -7,30 +7,36 @@ import { Link } from 'react-router'
 
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
 const SimIcon = ImageSelector(CurrentContext.theme, 'svgs/sim.svg');
+const DeviceIcon = ImageSelector(CurrentContext.theme, 'svgs/device.svg');
+const BillingIcon = ImageSelector(CurrentContext.theme, 'svgs/billing.svg');
+const AutomationIcon = ImageSelector(CurrentContext.theme, 'svgs/automation.svg');
+const AnalyticIcon = ImageSelector(CurrentContext.theme, 'svgs/analytic.svg');
+const AdminIcon  = ImageSelector(CurrentContext.theme, 'svgs/admin.svg');
+const SignoutIcon  = ImageSelector(CurrentContext.theme, 'svgs/signout.svg');
 
 
 
 class Sidebar extends Component {
   render() {
     return (
-      <div className={styles.mc_sidebar}>
+      <div data-spec="test" className={styles.mc_sidebar}>
         <div className={styles.mc_att_logo}>
-          <Link to="/"><img id="logotest" src={logo} alt="ATT"/></Link>
+          <Link data-spec="homeLogo" to="/"><img id="logotest" src={logo} alt="ATT"/></Link>
         </div>
         <ul>
           <li>
             <SidebarItem link='/sims' icon={<SimIcon/>} label='SIMS' />
           </li>
           <li>
-            <SidebarItem link='/devices' icon={deviceIcon} label='DEVICES'/>
+            <SidebarItem link='/devices' icon={<DeviceIcon/>} label='DEVICES'/>
           </li>
           <li>
-            <SidebarItem link='/billing' icon={billingIcon} label='BILLING'/>
+            <SidebarItem link='/billing' icon={<BillingIcon/>} label='BILLING'/>
           </li>
-          <li>
-            <SidebarItem link='/automation' icon={automationIcon} label='AUTOMATION'/>
+           <li>
+            <SidebarItem link='/automation' icon={<AutomationIcon/>} label='AUTOMATION'/>
           </li>
-          <li>
+          {/*<li>
             <a href="#" title="Reports">
               <div>
                 <svg
@@ -44,7 +50,7 @@ class Sidebar extends Component {
               </div>
             </a>
           </li>
-          {/*  <li>
+            <li>
 
                         <a href="#" title="Analytics">
                             <div>
@@ -58,23 +64,23 @@ class Sidebar extends Component {
                             </div>
                         </a>
 
-          </li>
-          {/*<li>
-            <SidebarItem link='/analytics' icon={analyticIcon} label='ANALYTICS'/>
           </li>*/}
           <li>
-            <SidebarItem link='/administration' icon={adminIcon} label='ADMINISTRATION'/>
+            <SidebarItem link='/analytics' icon={<AnalyticIcon/>} label='ANALYTICS'/>
+          </li>
+          <li>
+            <SidebarItem link='/administration' icon={<AdminIcon />} label='ADMINISTRATION'/>
           </li>
           {/*<li>
-            <SidebarItem link='/api' icon={apiIcon} label='API'/>
+            <SidebarItem link='/api' icon={<ApiIcon/>} label='API'/>
           </li>
-
           <li>
             <SidebarItem link='/support' icon={supportIcon} label='SUPPORT'/>
           </li>*/}
           <li>
-            <SidebarItem link='/signout' icon={signoutIcon} label='SIGNOUT'/>
+            <SidebarItem link='/signout' icon={<SignoutIcon/>} label='SIGNOUT'/>
           </li>
+        
         </ul>
       </div>
     );
