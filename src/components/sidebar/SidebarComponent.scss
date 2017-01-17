@@ -12,16 +12,21 @@
 		width: 100%;
 		text-align: center;
 		padding: 21px 0;
+
 		img {
 			width: 35px;
 		}
+
 	}
+
 	>ul {
 		float: left;
 		width: 100%;
+
 		>li {
 			text-align: center;
 			height: 70px;
+
 			>a {
 				float: left;
 				width: 100%;
@@ -30,16 +35,21 @@
 				position: relative;
 				display: table;
 				padding: 0 10px;
+
 				>div {
 					display: table-cell;
 					vertical-align: middle;
+
 					>svg {
 						width: 25px;
+
 						path {
 							fill:#666666;
 						}
+
 					}
 				}
+
 				span {
 					display: block;
 					width: 100%;
@@ -50,8 +60,11 @@
 					line-height: 70%;
 					text-transform: uppercase;
 				}
+
 			}
+
 			&:last-child {
+
 				>a {
 					position: absolute;
 					float: none;
@@ -59,7 +72,11 @@
 					bottom: 0;
 					left: 0;
 				}
+
 			}
+
 		}
+
 	}
+  
 }
