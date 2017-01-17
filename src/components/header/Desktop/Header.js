@@ -7,6 +7,8 @@ import { FormattedMessage } from 'react-intl';
 
 import styles from './Header.scss';
 
+const { string } = PropTypes;
+
 class Header extends Component {
   render() {
     return (
@@ -56,6 +58,14 @@ class Header extends Component {
       </div>
     )
   }
+}
+
+Header.defaultProps = {
+	userImage: "https://lh3.googleusercontent.com/CwlZEQdJqBGj3PlZXQPq6dsiVwD6eWMy4DgYBU-uFi30UEa5wOWFWJ1PfnEweULhVlmZgPLvijca6A=w1366-h768-rw-no"
+}
+
+Header.propTypes = {
+	userImage: string
 }
 
 export default Header;
