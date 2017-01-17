@@ -1,5 +1,5 @@
 export default {
-	"HELLO": "Hello G.",
+	"HELLO": "Hello GG.",
 	"SIMS":"SIMS",
 	"DEVICES":"DEVICES",
 	"BILLING":"BILLING",
