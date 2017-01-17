@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import SearchBar from '../searchbar';
 import UserMenu from './UserMenu';
 import AddButton from '../addbutton';
@@ -25,7 +25,7 @@ class Header extends Component {
 
   renderMenu() {
     return (
-      <div className={styles.menu}>
+      <div className={styles.menu} data-spec='hamburger_menu'>
         <div className={cn(styles.hamburger, styles.active)}>
           <span></span>
         </div>
@@ -35,7 +35,7 @@ class Header extends Component {
 
   renderTitle() {
     return (
-      <div className={styles.title}>
+      <div className={styles.title} data-spec='title'>
         <div className={styles.product_title}><FormattedMessage
                     id="PRODUCT_TITLE"
                 /></div>
@@ -48,10 +48,10 @@ class Header extends Component {
 
   renderUserImage() {
     return (
-      <div className={styles.user_image_position}>
+      <div className={styles.user_image_position} data-spec='user_image'>
         <img
           className={styles.user_image}
-          src="https://lh3.googleusercontent.com/CwlZEQdJqBGj3PlZXQPq6dsiVwD6eWMy4DgYBU-uFi30UEa5wOWFWJ1PfnEweULhVlmZgPLvijca6A=w1366-h768-rw-no"
+          src={this.props.userImage}
           />
       </div>
     )
