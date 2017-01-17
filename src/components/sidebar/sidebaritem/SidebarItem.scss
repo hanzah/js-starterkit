@@ -1,20 +1,34 @@
 .active {
+
+	>div {
+
 		span {
-				color: #0574ac;
+
+			>span {
+				color: #0073bc !important;
+			}
+      
 		}
+
 		&:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 0;
-				background-color: rgb(5, 116, 172);
-				box-shadow: 0px 1px 4.8px 0.2px rgba(0, 0, 0, 0.2);
-				width: 5px;
-				height: 70px;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-color: #0073bc;
+			box-shadow: 0px 1px 4.8px 0.2px rgba(0, 0, 0, 0.2);
+			width: 5px;
+			height: 70px;
 		}
+
 		svg {
-				path {
-						fill: #0574ac;
-				}
+
+			path {
+				fill: #0073bc !important;
+			}
+
 		}
+
+	}
+
 }

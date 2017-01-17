@@ -7,10 +7,15 @@ const { string, object } = PropTypes
 
 const SidebarItem = ({ link, icon, label }) => {
 	return (
-		<Link to={link} activeClassName={styles.active} >
+		<Link to={link} data-spec={label}  activeClassName={styles.active} >
 			<div>
-				{icon}  
-				<span>{label}</span>
+        {icon}  
+        <span>
+        <FormattedMessage
+          id={label}
+          defaultMessage={label}
+        />
+        </span>
 			</div>
 		</Link>
   );
