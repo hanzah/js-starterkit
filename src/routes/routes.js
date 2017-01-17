@@ -8,7 +8,7 @@ import SimsIndexView from 'views/SimsIndexView'
 /* eslint-disable react/display-name */
 export default () => (
   <Route path='/' component={MainLayout}>
-    <Route path="sims" component={SimsIndexView} >
+    <Route path="sims">
       <IndexRoute component={SimsIndexView} />
     </Route>
     <IndexRoute component={SimCardsView} />
