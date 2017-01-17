@@ -8,7 +8,7 @@ import {
   TableRow,
   TableRowColumn
 } from 'material-ui/Table';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import SimOptions from './simoptions';
 import cn from 'classnames';
 

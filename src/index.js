@@ -13,7 +13,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import theme from 'lib/material-ui/theme'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
+import themeATT from 'brands/default/styles/theme/theme'
 
 import CurrentContext from 'utils/currentContext'
 import { getTheme, getLocale, getThemeCss } from 'utils/constants'
@@ -34,7 +34,7 @@ class Root extends React.Component {
 					locale={CurrentContext.locale}
 					messages={this.props.messages}
 				>
-					<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+					<MuiThemeProvider muiTheme={getMuiTheme(theme, themeATT)}>
 						<Router history={history} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
 					</MuiThemeProvider>
 				</IntlProvider>
