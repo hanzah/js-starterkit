@@ -11,6 +11,7 @@ import routes from 'routes'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import theme from 'lib/material-ui/theme'
+import themeATT from 'brands/default/styles/theme/theme'
 
 
 import CurrentContext from 'utils/currentContext'
@@ -32,7 +33,7 @@ class Root extends React.Component {
 					locale={CurrentContext.locale}
 					messages={this.props.messages}
 				>
-					<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+					<MuiThemeProvider muiTheme={getMuiTheme(theme, themeATT)}>
 						<Router history={history} render={applyRouterMiddleware()} routes={ renderedRoutes }/>
 					</MuiThemeProvider>
 				</IntlProvider>
