@@ -7,6 +7,8 @@ import { FormattedMessage } from 'react-intl';
 
 import styles from './Header.scss';
 
+const {string} = PropTypes;
+
 class Header extends Component {
   render() {
     return (
@@ -37,11 +39,11 @@ class Header extends Component {
     return (
       <div className={styles.title} data-spec='title'>
         <div className={styles.product_title}><FormattedMessage
-                    id="PRODUCT_TITLE"
-                /></div>
+          id="PRODUCT_TITLE"
+          /></div>
         <div className={styles.section_title}><FormattedMessage
-                    id="SECTION_TITLE"
-                /></div>
+          id="SECTION_TITLE"
+          /></div>
       </div>
     )
   }
@@ -56,6 +58,10 @@ class Header extends Component {
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  userImage: string
 }
 
 export default Header;

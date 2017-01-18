@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import styles from './SimDetailsTabs.scss';
@@ -19,40 +19,29 @@ const changesData = [
   }
 ];
 
-class Changes extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      fixedHeader: true,
-      showCheckboxes: false,
-      selectable: false
-    };
-  }
-  render() {
-    return (
-      <div>
-        <Table fixedHeader={this.state.fixedHeader} className={styles.sim_changes_table} selectable={this.state.selectable}>
-          <TableHeader displaySelectAll={this.state.showCheckboxes} adjustForCheckbox={this.state.showCheckboxes}>
-            <TableRow>
-              <TableHeaderColumn>Date & Time</TableHeaderColumn>
-              <TableHeaderColumn>Note</TableHeaderColumn>
-              <TableHeaderColumn>Status</TableHeaderColumn>
+const Changes = () => {
+  return (
+    <div>
+      <Table fixedHeader={true} className={styles.sim_changes_table} selectable={false}>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+          <TableRow>
+            <TableHeaderColumn>Date & Time</TableHeaderColumn>
+            <TableHeaderColumn>Note</TableHeaderColumn>
+            <TableHeaderColumn>Status</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody displayRowCheckbox={false}>
+          {changesData.map((row, index) => (
+            <TableRow key={index} >
+              <TableRowColumn>{row.dateTime}</TableRowColumn>
+              <TableRowColumn>{row.note}</TableRowColumn>
+              <TableRowColumn className={styles.active}>{row.status}</TableRowColumn>
             </TableRow>
-          </TableHeader>
-          <TableBody displayRowCheckbox={this.state.showCheckboxes}>
-            {changesData.map((row, index) => (
-              <TableRow key={index} >
-                <TableRowColumn>{row.dateTime}</TableRowColumn>
-                <TableRowColumn>{row.note}</TableRowColumn>
-                <TableRowColumn className={styles.active}>{row.status}</TableRowColumn>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
-    );
-  }
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
 }
 
 export default Changes;

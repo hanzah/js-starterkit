@@ -20,6 +20,36 @@
   bottom: 0;
   width: 100%;
   padding: 20px 20px 30px 20px;
+  .chart {
+   float:left;
+   height: 100%;
+    &:first-child{
+      width: 20%;
+    }
+    &:first-child + .chart{
+      width: 40%;
+    }
+        &:last-child{
+      width: 40%;
+    }
+    .chart_img {
+      width: 100%;
+      text-align: center;
+      img{
+        max-width:80%;
+        height: auto;
+      }
+    }
+    .chart_names {
+      font-family: 'omnes_att_iimedium';
+      font-size: 13px;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      padding-top:20px;
+    }
+  }
 }
 
 .menu {
@@ -31,7 +61,6 @@
   float: left;
   padding-left: 20px;
   padding-top: -10px;
-
   .product_title {
     font-family: 'omnes_att_iibold';
     font-size: 12px;
@@ -40,7 +69,6 @@
     line-height: 20%;
     padding-bottom: 5px;
   }
-  
   .section_title {
     font-family: 'omnesatt_iiregular';
     font-size: 24px;
@@ -72,14 +100,4 @@
   width: 40px;
   height: 40px;
   color: rgb(255, 255, 255);
-}
-
-.chart_names {
-  font-family: 'omnes_att_iimedium';
-  font-size: 13px;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: inline-block;
-  text-align: center;
 }
