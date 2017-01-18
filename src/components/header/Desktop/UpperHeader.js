@@ -2,17 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import SearchBar from '../searchbar';
 import UserMenu from './UserMenu';
 import cn from 'classnames';
-import { FormattedMessage } from 'react-intl';
 
 import styles from './Header.scss';
 
-const { string } = PropTypes;
+const { string, bool } = PropTypes;
 
 class UpperHeader extends Component {
   render() {
     return (
       <div>
-        {this.renderMenu()}
         {this.renderTitle()}
         <UserMenu />
         {this.renderUserImage()}
@@ -21,25 +19,11 @@ class UpperHeader extends Component {
     );
   }
 
-  renderMenu() {
-    return (
-      <div className={styles.menu} data-spec='hamburger_menu'>
-        <div className={cn(styles.hamburger, styles.active)}>
-          <span></span>
-        </div>
-      </div>
-    )
-  }
-
   renderTitle() {
     return (
       <div className={styles.title} data-spec='title'>
-        <div className={styles.product_title}><FormattedMessage
-          id="PRODUCT_TITLE"
-          /></div>
-        <div className={styles.section_title}><FormattedMessage
-          id="SECTION_TITLE"
-          /></div>
+        <div className={styles.product_title}>{this.props.productTitle}</div>
+        <div className={styles.section_title}>{this.props.sectionTitle}</div>
       </div>
     )
   }
@@ -57,11 +41,16 @@ class UpperHeader extends Component {
 }
 
 UpperHeader.defaultProps = {
-  userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
+	userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
+  productTitle: 'PRODUCT TITLE',
+  sectionTitle: 'SIM management'
 }
 
 UpperHeader.propTypes = {
-  userImage: string
+	userImage: string,
+	showMenu: bool,
+  productTitle: string,
+  sectionTitle: string
 }
 
 export default UpperHeader;
