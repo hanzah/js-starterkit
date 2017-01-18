@@ -13,8 +13,8 @@ class SimDetails extends Component {
       <div>
         <SimDetailsHeader/>
         <div>
-          <ChangeStatus/>
           <div className={styles.main_wrap}>
+            <ChangeStatus/>
             <div className={styles.sim_status_diagram}><SimStatusDiagram/></div>
             <div className={styles.sim_details_info}><SimDetailsInfo/></div>
           </div>

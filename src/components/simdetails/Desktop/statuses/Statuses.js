@@ -14,7 +14,7 @@ export class FirstStatus extends Component {
           <div className={styles.number}>450.02
             <span>MB</span>
           </div>
-          <div>{this.props.status}</div>
+          <div className={styles.status_state}>{this.props.status}</div>
         </div>
       </div>
     );

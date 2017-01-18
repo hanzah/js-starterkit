@@ -9,12 +9,18 @@
   overflow: hidden;
   opacity: 1;
   transition: opacity 1s ease 0s;
+  z-index:1;
+ // display: flex;
+  display: none;
+  align-items: center;
+
   &.show {
     opacity: 1;
   }
+
   .circles_wrap {
-    position: absolute;
-    top: 40px;
-    left: 64px;
+    height: 191px;
+    margin-left:90px;
   }
+  
 }
