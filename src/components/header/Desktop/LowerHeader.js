@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-//import SimsOverviewAnalytics from '../simsoverviewanalytics';
-import SimDetailAnalytics from '../simdetailsanalyitics';
+import SimsOverviewAnalytics from '../simsoverviewanalytics';
 
 class LowerHeader extends Component {
   render() {
     return (
       <div>
-        <SimDetailAnalytics />
+        <SimsOverviewAnalytics />
       </div>
     );
   }

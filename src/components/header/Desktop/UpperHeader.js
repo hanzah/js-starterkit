@@ -57,7 +57,7 @@ class UpperHeader extends Component {
 }
 
 UpperHeader.defaultProps = {
-  userImage: "https://lh3.googleusercontent.com/CwlZEQdJqBGj3PlZXQPq6dsiVwD6eWMy4DgYBU-uFi30UEa5wOWFWJ1PfnEweULhVlmZgPLvijca6A=w1366-h768-rw-no"
+  userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
 }
 
 UpperHeader.propTypes = {

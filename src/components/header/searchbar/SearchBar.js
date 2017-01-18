@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './SearchBar.scss';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 
 const magnifier = ImageSelector(CurrentContext.theme, 'magnifier.png');
 

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './SidebarComponent.scss'
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 import SidebarItem from '../sidebaritem'
 import { Link } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
