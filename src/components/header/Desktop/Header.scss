@@ -13,43 +13,15 @@
   width: 100%;
   height: 85px;
   padding: 20px 10px 10px 20px;
+  z-index: 10;
 }
 
 .lower_header {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 20px 20px 30px 20px;
-  .chart {
-   float:left;
-   height: 100%;
-    &:first-child{
-      width: 20%;
-    }
-    &:first-child + .chart{
-      width: 40%;
-    }
-        &:last-child{
-      width: 40%;
-    }
-    .chart_img {
-      width: 100%;
-      text-align: center;
-      img{
-        max-width:80%;
-        height: auto;
-      }
-    }
-    .chart_names {
-      font-family: 'omnes_att_iimedium';
-      font-size: 13px;
-      color: rgb(255, 255, 255);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      padding-top:20px;
-    }
-  }
+  padding: 20px 20px 20px 20px;
+  z-index: -10;
 }
 
 .menu {
@@ -100,4 +72,25 @@
   width: 40px;
   height: 40px;
   color: rgb(255, 255, 255);
+}
+
+.charts {
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+
+  .chart_images {
+    position: relative;
+    height: 100%;
+    top:0;
+  }
+  
+  .chart_names {
+    font-family: 'omnes_att_iimedium';
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
 }

@@ -16,7 +16,7 @@ export default {
 	"COUNTRY":"COUNTRY",
 	"STATUS":"STATUS",
   "PRODUCT_TITLE":"PRODUCT NAME",
-  "SECTION_TITLE":"Sim management",
+  "SECTION_TITLE":"SIM management",
   "ASSET_ID":"Asset ID",
   "SESSION_START":"Session Start",
   "DATA_VOLUME":"Data Volume (KB)",
