@@ -4,9 +4,9 @@
 	top: 0;
 	bottom: 0;
 	background-color: rgb(242, 242, 242);
-	width: 130px;
 	z-index: 10;
 	height: 100%;
+	width: 130px;
 	.mc_att_logo {
 		float: left;
 		width: 100%;
@@ -72,11 +72,25 @@
 					bottom: 0;
 					left: 0;
 				}
-
 			}
-
 		}
-
 	}
-  
+}
+
+.appear {
+	width: 0;
+
+	&.appear_active {
+		width: 130px;
+		transition: width .5s ease-out;
+	}
+}
+
+.leave {
+	width: 130px;
+
+	&.leave_active {
+		width: 0;
+		transition: width .5s ease-in;
+	}
 }

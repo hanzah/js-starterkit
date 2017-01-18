@@ -1,0 +1,73 @@
+exports[`Welcome Reducer should return changed state 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "ACTIVATION READY",
+    },
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "INACTIVE",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": undefined,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return initial state 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "ACTIVATION READY",
+    },
+    Object {
+      "country": "USA",
+      "ipAddress": "10.70.196.202",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "sessions": 430,
+      "status": "INACTIVE",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+  },
+}
+`;

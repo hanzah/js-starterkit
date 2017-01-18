@@ -14,7 +14,14 @@ export const loadLanguages = (theme, locale) => {
 			default: loadDefaultMessages(locale, baseLng),
 			gm: loadGmMessages(locale, baseLng),
 		}
-		MESSAGES[theme](resolve)
+		if (!window.Intl) {
+			require(['intl', 'intl/locale-data/jsonp/en.js', 'intl/locale-data/jsonp/es.js'], function(Intl) {
+				window.Intl = Intl;
+				MESSAGES[theme](resolve)
+			});
+		} else {
+			MESSAGES[theme](resolve)
+		}
 	});
 }
 

@@ -19,14 +19,18 @@ export const getTheme = () => {
 export const getLocale = () => {
 	let subdomainLocale = location.hostname.split('.')[1]
 	if(LOCALES.includes(subdomainLocale)) {
-		const parts = subdomainLocale.split('-')
-		return `${parts[0]}-${parts[1].toUpperCase()}`
+		return formatLocale(subdomainLocale)
 	}
 	const locale = navigator.language
 	if(LOCALES.includes(locale.toLowerCase())) {
-		return locale
+		return formatLocale(locale)
 	}
 	return 'en-US'
+}
+
+const formatLocale = (locale) => {
+	const parts = locale.split('-')
+	return `${parts[0]}-${parts[1].toUpperCase()}`
 }
 
 export const getThemeCss = (theme) => {

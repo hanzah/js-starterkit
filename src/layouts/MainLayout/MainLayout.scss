@@ -2,7 +2,13 @@
   float: left;
   width: 100%;
   height: auto;
-  padding-left: 130px;
+	transition: padding .5s linear;
+	padding-left: 0;
+}
+
+.mc_global_container_padding {
+	transition: padding .5s linear;
+	padding-left: 130px;
 }
 
 .component_wrapper {

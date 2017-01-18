@@ -39,9 +39,10 @@ class SimTable extends React.Component {
           leaveActive: styles.leave_active
         }}
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
+          transitionLeaveTimeout={500}
+				>
 
-          {this.props.showOptions ? <SimOptions/> : ''}
+          {this.props.showOptions ? <SimOptions key={1} /> : null}
 
         </ReactCSSTransitionGroup>
         <div className={styles.table_wrap}>
@@ -107,7 +108,7 @@ class SimTable extends React.Component {
         sims = selectedRows.map((index) => {
           return this.props.sims[index]
         })
-      
+
     }
     this
       .props

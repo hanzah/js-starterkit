@@ -7,7 +7,7 @@ import { FormattedMessage } from 'react-intl';
 
 import styles from './Header.scss';
 
-const { string } = PropTypes;
+const { string, func, bool } = PropTypes;
 
 class Header extends Component {
   render() {
@@ -27,8 +27,8 @@ class Header extends Component {
 
   renderMenu() {
     return (
-      <div className={styles.menu} data-spec='hamburger_menu'>
-        <div className={cn(styles.hamburger, styles.active)}>
+      <div className={styles.menu} data-spec='hamburger_menu' onClick={this.toggleMenu}>
+        <div className={cn(styles.hamburger, { [styles.active]: this.props.showMenu })}>
           <span></span>
         </div>
       </div>
@@ -58,14 +58,20 @@ class Header extends Component {
       </div>
     )
   }
+
+	toggleMenu = () => {
+		this.props.toggleMenu()
+	}
 }
 
 Header.defaultProps = {
-	userImage: "https://lh3.googleusercontent.com/CwlZEQdJqBGj3PlZXQPq6dsiVwD6eWMy4DgYBU-uFi30UEa5wOWFWJ1PfnEweULhVlmZgPLvijca6A=w1366-h768-rw-no"
+	userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
 }
 
 Header.propTypes = {
-	userImage: string
+	userImage: string,
+	toggleMenu: func,
+	showMenu: bool
 }
 
 export default Header;

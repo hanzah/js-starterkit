@@ -1,0 +1,11 @@
+exports[`UI Reducer should return changed toggle status after toggle event 1`] = `
+Object {
+  "menuOpened": false,
+}
+`;
+
+exports[`UI Reducer should return initial state 1`] = `
+Object {
+  "menuOpened": true,
+}
+`;
