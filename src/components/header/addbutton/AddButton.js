@@ -3,7 +3,7 @@ import { SpeedDial, SpeedDialItem } from 'react-mui-speeddial';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 
 const AddSim = ImageSelector(CurrentContext.theme, 'svgs/add-sim.svg');
 const AddSims = ImageSelector(CurrentContext.theme, 'svgs/add-multiple-sims.svg');
