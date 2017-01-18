@@ -21,7 +21,7 @@ class SimInfo extends Component {
                     <div className={styles.number}>450.02
                         <span>MB</span>
                     </div>
-                    <div>ACTIVE</div>
+                    <div className={styles.status_state}>ACTIVE</div>
                   </div>
                 </div>
               </div>

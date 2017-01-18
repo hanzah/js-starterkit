@@ -4,14 +4,14 @@
 	position: relative;
 
 	.sim_serial_number {
-		font-family: 'omnesatt_iiregular';
+		font-family: $omnes-medium;
 		font-size: 21px;
 		color: #333333;
 	}
 
 	.add_nickname {
 		cursor: pointer;
-		font-family: 'omnes_att_iimedium';
+		font-family: $omnes-medium;
 		font-size: 14px;
 		color: #0574ac;
 	}
@@ -57,15 +57,22 @@
 						text-transform: uppercase;
 
 						>.number {
-							font-family: 'omnes_att_iimedium';
-							font-size: 30px;
+							font-family: $omnes-medium;
+							font-size: 26px;
 
 							>span {
-								font-family: 'omnes_att_iimedium';
+								font-family: $omnes-medium;
 								font-size: 13px;
+                padding-left:7px;
 							}
 
 						}
+
+            .status_state{
+              padding-top:2px;
+              font-family: $omnes-medium;
+							font-size: 12px;
+            }
 
 					}
 
@@ -79,15 +86,22 @@
 				user-select: none;
 
 				img {
-					vertical-align: super;
-					margin-left: 5px;
+					position: absolute;
+          top:7px;
+          right:-11px;
 				}
 
-				>span {
+				span {
 					display: block;
 					font-family: $omnes-regular;
 					font-size: 12px;
 					color: #333333;
+
+          &:last-child{
+            display: inline;
+            position: relative;
+          }
+
 				}
         
 			}
@@ -139,9 +153,19 @@
 			cursor: pointer;
 			user-select: none;
 
+      span{
+
+        &:last-child{
+        display: inline;
+        position: relative;
+        }
+
+      }
+
 			img {
-				vertical-align: super;
-				margin-left: 5px;
+				position: absolute;
+        top:7px;
+        right:-11px;
 			}
 
 		}
