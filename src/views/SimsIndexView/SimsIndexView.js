@@ -7,9 +7,7 @@ const SimsIndexView = () => {
   return (
     <element>
       <DesktopMediaQuery>
-        <DesktopHeader name="desktop" />
-      </DesktopMediaQuery>
-      <DesktopMediaQuery>
+        <DesktopHeader name="desktop"  />
         <DesktopSimsOverview name="desktop" />
       </DesktopMediaQuery>
     </element>

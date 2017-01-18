@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/ImageSelector'
 import styles from './SimDetailsTabs.scss';
