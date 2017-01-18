@@ -2,7 +2,7 @@ import React from 'react';
 import CurrentContext from 'utils/currentContext';
 import ImageSelector from 'utils/imageSelector';
 
-import styles from '../Desktop/Header.scss';
+import styles from '../desktop/Header.scss';
 
 const usage = ImageSelector(CurrentContext.theme, 'sim-detail-usage.png');
 const country = ImageSelector(CurrentContext.theme, 'sim-detail-country-and-carrier.png');

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
 const caret = ImageSelector(CurrentContext.theme, 'caret.png');
