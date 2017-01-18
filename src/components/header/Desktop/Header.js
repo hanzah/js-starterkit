@@ -1,13 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import UpperHeader from './UpperHeader';
 import LowerHeader from './LowerHeader';
 import AddButton from '../addbutton';
-import cn from 'classnames';
-import { FormattedMessage } from 'react-intl';
 
 import styles from './Header.scss';
-
-const { string } = PropTypes;
 
 class Header extends Component {
   render() {
