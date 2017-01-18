@@ -9,6 +9,7 @@
   overflow: hidden;
   opacity: 0;
   transition: opacity 1s ease 0s;
+  display: none;
   &.show {
     opacity: 1;
   }

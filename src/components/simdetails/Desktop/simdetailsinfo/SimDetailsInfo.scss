@@ -1,27 +1,93 @@
 .siminfo_wrap {
-  table {
-    >tbody {
-      >tr {
-        border-bottom: none !important;
-      }
-    }
-  }
-  .table_wrap_top {
-    height: 60px;
-    overflow: hidden;
-    border-bottom: 2px solid rgb(242, 242, 242);
-    transition: all 0.5s ease;
-  }
-  .table_wrap_bottom {
-    height: 40px;
-    overflow: hidden;
-  }
-  &.show {
-    .table_wrap_top {
-      height: 192px;
-    }
-    .table_wrap_bottom {
-      height: 96px;
-    }
-  }
+	padding-top: 8px;
+
+	table {
+		max-width: 620px !important;
+
+		>tbody {
+
+			>tr {
+				border-bottom: none !important;
+
+				>td {
+					white-space: normal !important;
+					vertical-align: top;
+
+					&:first-child {
+						padding-left: 0px !important;
+					}
+          
+				}
+
+			}
+
+		}
+
+	}
+
+	.table_wrap_top {
+		height: 60px;
+		overflow: hidden;
+		border-bottom: 2px solid rgb(242, 242, 242);
+		transition: all 0.5s ease;
+	}
+
+	.table_wrap_bottom {
+		height: 40px;
+		overflow: hidden;
+	}
+
+	&.show {
+
+		.table_wrap_top {
+			height: 275px;
+		}
+
+		.table_wrap_bottom {
+			height: 96px;
+		}
+
+	}
+
+}
+
+.label {
+	font-family: $omnes-medium;
+	font-size: 12px;
+	color: #666666;
+}
+
+.label_detail {
+	font-family: $omnes-light;
+	font-size: 13px;
+	color: #333333;
+	margin-top: 5px;
+	margin-bottom: 26px;
+	max-width: 100%;
+	word-wrap: break-word;
+}
+
+.table_title {
+	font-family: $omnes-medium;
+	font-size: 12px;
+	color: #cccccc;
+	margin-bottom: 31px;
+	letter-spacing: 0.2em;
+
+	&.current_session {
+		margin-top: 8px;
+	}
+
+}
+
+.view_table_info {
+	float: right;
+	font-family: $omnes-medium;
+	font-size: 14px;
+	color: #0574ac;
+	text-transform: uppercase;
+  text-decoration: none;
+  margin-right:40px;
+  margin-top:37px;
+  margin-bottom:33px;
 }

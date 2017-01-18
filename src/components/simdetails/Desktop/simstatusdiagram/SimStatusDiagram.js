@@ -3,6 +3,7 @@ import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/ImageSelector'
 
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
+const caret = ImageSelector(CurrentContext.theme, 'caret.png');
 
 import styles from './SimStatusDiagram.scss';
 
@@ -25,8 +26,8 @@ class SimInfo extends Component {
                 </div>
               </div>
               <div className={styles.session_status}>
-                <span>IN SESSION | ACTIVE</span>
-                <span>Click on diagram to change SIM state.</span>
+                <span>IN SESSION</span>
+                <span>ACTIVE <img src={caret} alt="caret"/></span>
               </div>
             </div>
 
@@ -37,8 +38,9 @@ class SimInfo extends Component {
                   <img src={logo} alt="att" />
                 </div>
               </div>
-              <div>
-                <span>CONNECTED BY AT&amp;T</span>
+              <div className={styles.sim_profile}>
+                <span>ACTIVE SIM PROFILE</span>
+                <span>AT&amp;T <img src={caret} alt="caret"/></span>
               </div>
             </div>
 

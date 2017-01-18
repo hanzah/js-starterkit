@@ -1,6 +1,15 @@
+.main_wrap{
+  float:left;
+  width:100%;
+  display: flex;
+}
+
 .sim_status_diagram {
   float: left;
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sim_details_info {

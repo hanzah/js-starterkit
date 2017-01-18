@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import SearchBar from '../searchbar';
 import UserMenu from './UserMenu';
-import cn from 'classnames';
 
 import styles from './Header.scss';
 

@@ -6,7 +6,7 @@ import cn from 'classnames';
 
 import styles from './Header.scss';
 
-const { func } = PropTypes;
+const { func, bool } = PropTypes;
 
 class Header extends Component {
   render() {
@@ -40,7 +40,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  toggleMenu: func
+  toggleMenu: func,
+  showMenu: bool
 }
 
 export default Header;
