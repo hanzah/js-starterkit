@@ -11,8 +11,8 @@ export default () => (
   <Route path='/' component={MainLayout}>
     <Route path="sims">
       <IndexRoute component={SimsIndexView} />
+			<Route path=":number" component={SimDetailsView} />
     </Route>
-    <Route path="/simid" component={SimDetailsView} />
     <IndexRoute component={SimCardsView} />
     <Redirect from='*' to='/' />
   </Route>

@@ -10,7 +10,7 @@ export default [{
 	{
 		number: '8901170425230326676',
 		plan: 'AT&T Data Rate Plan',
-		sessions: 430,
+		sessions: 440,
 		ipAddress: '10.70.196.202',
 		network: 'AT&T',
 		country: 'USA',
@@ -19,7 +19,7 @@ export default [{
 	{
 		number: '8901170425230326677',
 		plan: 'AT&T Data Rate Plan',
-		sessions: 430,
+		sessions: 450,
 		ipAddress: '10.70.196.202',
 		network: 'AT&T',
 		country: 'USA',

@@ -51,7 +51,9 @@ class SimTable extends React.Component {
             className={styles.mc_sim_table}
             fixedHeader
             multiSelectable
-            onRowSelection={this.onRowSelection}>
+            onRowSelection={this.onRowSelection}
+						onCellClick={this.onCellClick}
+					>
             <TableHeader>
               {this.renderHeader()}
             </TableHeader>
@@ -95,6 +97,10 @@ class SimTable extends React.Component {
   }
 
   onRowSelection = (selectedRows) => {
+    if(this.skipSelection){
+      this.skipSelection = false
+      return
+    }
     let sims;
     switch (selectedRows) {
       case 'all':
@@ -110,17 +116,22 @@ class SimTable extends React.Component {
         })
 
     }
-    this
-      .props
-      .onRowSelection(sims)
+    this.props.onRowSelection(sims)
   }
+
+	onCellClick = (row, column) => {
+		if(column === -1) return
+    this.skipSelection = true
+		this.props.gotToSimDetails(this.props.sims[row]);
+	}
 }
 
 SimTable.propTypes = {
   sims: array,
   onRowSelection: func,
   selectedSims: object,
-  showOptions: bool
+  showOptions: bool,
+	gotToSimDetails: func
 }
 
 export default SimTable;
