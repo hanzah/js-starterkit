@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import MediaQuery from 'react-responsive'
 
-const { object } = PropTypes
+const { any } = PropTypes
 
 const customMediaQueryWrapper = (min, max) => {
 	class CustomMediaQuery extends React.Component {
@@ -14,7 +14,7 @@ const customMediaQueryWrapper = (min, max) => {
 		}
 	}
 	CustomMediaQuery.propTypes = {
-		children: object
+		children: any
 	}
 	return CustomMediaQuery
 }

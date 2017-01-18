@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 import { DesktopSidebarComponent } from 'components/sidebar'
 import styles from './MainLayout.scss'
+import cn from 'classnames';
 
-const { object } = PropTypes
+const { object, bool } = PropTypes
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children, showMenu }) => {
   return (
-    <div className={styles.mc_global_container}>
+    <div className={cn(styles.mc_global_container, { [styles.mc_global_container_padding]: showMenu })}>
       <DesktopSidebarComponent />
       <div className={styles.component_wrapper}>
         {children}
@@ -17,7 +18,8 @@ const MainLayout = ({children}) => {
 }
 
 MainLayout.propTypes = {
-  children: object
+  children: object,
+	showMenu: bool
 }
 
 export default MainLayout;
