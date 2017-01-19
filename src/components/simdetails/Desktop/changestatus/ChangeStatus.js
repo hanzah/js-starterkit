@@ -3,7 +3,9 @@ import Status from '../statuses/Statuses';
 import cn from 'classnames';
 import ConfirmModal from 'components/confirmmodal';
 import RaisedButton from 'material-ui/RaisedButton';
-import buttonStyle from './style'
+import buttonStyle from './style';
+import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
 
 import styles from './ChangeStatus.scss';
 
@@ -26,9 +28,14 @@ const Statuses = [
 ]
 
 const dialogContent = () => {
-  return(
+  return (
     <div className={styles.dialog_wrap}>
-        Dialog content
+      <div>Please select date to set up your changes and confirm.</div>
+      <div>DATE (OBLIGATORY)</div>
+      <DatePicker hintText="DD/MM/YY"/>
+      <div>ADDITIONAL COMMENT</div>
+      <TextField fullWidth={true} multiLine={true} hintText="Add your optional comment about change here."/>
+
     </div>
   );
 }
@@ -45,27 +52,39 @@ class ChangeStatus extends Component {
 
   }
 
-  onModalCancel = () =>{
-    this.setState({openModal:false})
+  onModalCancel = () => {
+    this.setState({openModal: false})
   }
 
   handleStatusChange = (status) => {
-    this.setState({addedClass: status, openModal:true});
+    this.setState({addedClass: status, openModal: true});
   }
 
   render() {
 
     const sim = this.props.sim;
-     const actions = [
-      <RaisedButton style={buttonStyle.cancel.style} labelStyle={buttonStyle.cancel.labelStyle} onClick={this.onModalCancel} key="Cancel" label="Cancel"/>,
-      <RaisedButton key="Confirm" label="Confirm" primary={true}/>
+    const actions = [ < RaisedButton style = {
+        buttonStyle.cancel.style
+      }
+      labelStyle = {
+        buttonStyle.cancel.labelStyle
+      }
+      onClick = {
+        this.onModalCancel
+      }
+      key = "Cancel" label = "Cancel" />, < RaisedButton key = "Confirm" label = "Confirm" primary = {
+        true
+      } />
     ];
 
     return (
       <div
         onClick={this.props.handleToggleShowChangeStatus}
         className={cn(styles.status_overlay)}>
-        <ConfirmModal actions={actions} open={this.state.openModal} title="CONFIRM CHANGES">
+        <ConfirmModal
+          actions={actions}
+          open={this.state.openModal}
+          title="CONFIRM CHANGES">
           {dialogContent()}
         </ConfirmModal>
         <div className={styles.circles_wrap}>
