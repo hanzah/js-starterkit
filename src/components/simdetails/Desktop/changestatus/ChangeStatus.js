@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import styles from './ChangeStatus.scss';
 
-const {func} = PropTypes;
+const {func, bool} = PropTypes;
 
 const Statuses = [
   {
@@ -39,6 +39,8 @@ class ChangeStatus extends Component {
 
   render() {
 
+    const sim = this.props.sim;
+
     return (
       <div
         onClick={this.props.handleToggleShowChangeStatus}
@@ -55,7 +57,7 @@ class ChangeStatus extends Component {
           <div className={styles.overlay_text}>
             IN SESION
             <span>|</span>
-            ACTIVE
+            {sim.status}
           </div>
         </div>
       </div>
@@ -66,5 +68,6 @@ class ChangeStatus extends Component {
 export default ChangeStatus;
 
 ChangeStatus.propTypes = {
-  handleToggleShowChangeStatus: func
+  handleToggleShowChangeStatus: func,
+  sim: bool
 }
