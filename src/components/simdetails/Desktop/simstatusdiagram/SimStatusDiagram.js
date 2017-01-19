@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/imageSelector'
+import { FormattedNumber } from 'react-intl';
 
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
 const caret = ImageSelector(CurrentContext.theme, 'caret.png');
+
+const {object} = PropTypes;
+
 
 import styles from './SimStatusDiagram.scss';
 
 class SimInfo extends Component {
 
   render() {
+    const sim = this.props.sim;
+
     return (
       <div>
         <div className={styles.siminfo_detail}>
@@ -18,16 +24,16 @@ class SimInfo extends Component {
               <div className={styles.circle}>
                 <div>
                   <div onClick={this.handleToggleShowChangeStatus} className={styles.circle_data}>
-                    <div className={styles.number}>450.02
+                    <div className={styles.number}><FormattedNumber value={sim.sessions} />
                         <span>MB</span>
                     </div>
-                    <div className={styles.status_state}>ACTIVE</div>
+                    <div className={styles.status_state}>{sim.status}</div>
                   </div>
                 </div>
               </div>
               <div className={styles.session_status}>
                 <span>IN SESSION</span>
-                <span>ACTIVE <img src={caret} alt="caret"/></span>
+                <span>{sim.status} <img src={caret} alt="caret"/></span>
               </div>
             </div>
 
@@ -52,3 +58,7 @@ class SimInfo extends Component {
 }
 
 export default SimInfo;
+
+SimInfo.propTypes = {
+  sim: object
+}

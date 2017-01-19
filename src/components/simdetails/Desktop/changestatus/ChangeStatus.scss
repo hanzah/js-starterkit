@@ -10,7 +10,8 @@
   opacity: 1;
   transition: opacity 1s ease 0s;
   z-index:1;
-  display: flex;
+ // display: flex;
+ display:none;
   align-items: center;
 
   &.show {

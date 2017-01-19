@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table';
 import cn from 'classnames';
 
 import styles from './SimDetailsInfo.scss';
+
+const {object} = PropTypes;
 
 class SimDetailsInfo extends Component {
 
@@ -48,58 +50,39 @@ class SimDetailsInfo extends Component {
         <h2 className={cn(styles.table_title, styles.current_session)}>CURRENT SESSION</h2>
         <div className={styles.table_wrap_bottom}>
           <Table selectable={this.state.selectable}>
-            <TableBody displayRowCheckbox={this.state.showCheckboxes}>
-              <TableRow>
-                <TableRowColumn>
-                  <div className={styles.label}>CARRIER</div>
-                  <div className={styles.label_detail}>AT&amp;T</div>
-                </TableRowColumn>
-                <TableRowColumn>
-                  <div className={styles.label}>LOCATION</div>
-                  <div className={styles.label_detail}>United States</div>
-                </TableRowColumn>
-                <TableRowColumn>
-                  <div className={styles.label}>SESSION START</div>
-                  <div className={styles.label_detail}>4.4.2016. | 03:42 PM</div>
-                </TableRowColumn>
-              </TableRow>
-              <TableRow>
-                <TableRowColumn>
-                  <div className={styles.label}>DEVICE IP ADDRESS</div>
-                  <div className={styles.label_detail}>10.192.0.40</div>
-                </TableRowColumn>
-                <TableRowColumn>
-                  <div className={styles.label}>GGSN/PGW ADDRES</div>
-                  <div className={styles.label_detail}>10.22.110.13</div>
-                </TableRowColumn>
-                <TableRowColumn>
-                  <div className={styles.label}>APN</div>
-                  <div className={styles.label_detail}>testm2m-dc8</div>
-                </TableRowColumn>
-              </TableRow>
-            </TableBody>
+            {this.renderSessionData()}
           </Table>
         </div>
         {this.handleViewMoreText()
-          ? <a href="javascript:void(0)" className={styles.view_table_info} onClick={this.handleShowDetails} title="View less">View less</a>
-          : <a className={styles.view_table_info} href="javascript:void(0)" onClick={this.handleShowDetails}
+          ? <a
+              href="javascript:void(0)"
+              className={styles.view_table_info}
+              onClick={this.handleShowDetails}
+              title="View less">View less</a>
+          : <a
+            className={styles.view_table_info}
+            href="javascript:void(0)"
+            onClick={this.handleShowDetails}
             title="View details">View details</a>
-        }
+}
       </div>
     );
   }
 
   renderSimData() {
+
+    const sim = this.props.sim;
+
     return (
       <TableBody displayRowCheckbox={this.state.showCheckboxes}>
         <TableRow>
           <TableRowColumn>
             <div className={styles.label}>MSISDN NUMBER</div>
-            <div className={styles.label_detail}>+1 212 439 6500</div>
+            <div className={styles.label_detail}>{sim.number}</div>
           </TableRowColumn>
           <TableRowColumn>
             <div className={styles.label}>SIM STATUS</div>
-            <div className={styles.label_detail}>Activated</div>
+            <div className={styles.label_detail}>{sim.status}</div>
           </TableRowColumn>
           <TableRowColumn>
             <div className={styles.label}>ACTIVATION DATE</div>
@@ -133,17 +116,17 @@ class SimDetailsInfo extends Component {
           </TableRowColumn>
           <TableRowColumn>
             <div className={styles.label}>RATE PLAN</div>
-            <div className={styles.label_detail}>AT&T IoT Data Plan Name</div>
+            <div className={styles.label_detail}>{sim.plan}</div>
           </TableRowColumn>
         </TableRow>
 
         <TableRow>
           <TableRowColumn>
-            <div className={styles.label}>COPY RULE<br />(SECURE SIM ID)</div>
+            <div className={styles.label}>COPY RULE<br/>(SECURE SIM ID)</div>
             <div className={styles.label_detail}>None</div>
           </TableRowColumn>
           <TableRowColumn>
-            <div className={styles.label}>COPY RULE<br />(PASSWORD)</div>
+            <div className={styles.label}>COPY RULE<br/>(PASSWORD)</div>
             <div className={styles.label_detail}>None</div>
           </TableRowColumn>
           <TableRowColumn>
@@ -154,6 +137,49 @@ class SimDetailsInfo extends Component {
       </TableBody>
     );
   }
+
+  renderSessionData() {
+
+    const sim = this.props.sim;
+
+    return (
+      <TableBody displayRowCheckbox={this.state.showCheckboxes}>
+        <TableRow>
+          <TableRowColumn>
+            <div className={styles.label}>CARRIER</div>
+            <div className={styles.label_detail}>{sim.network}</div>
+          </TableRowColumn>
+          <TableRowColumn>
+            <div className={styles.label}>LOCATION</div>
+            <div className={styles.label_detail}>{sim.country}</div>
+          </TableRowColumn>
+          <TableRowColumn>
+            <div className={styles.label}>SESSION START</div>
+            <div className={styles.label_detail}>4.4.2016. | 03:42 PM</div>
+          </TableRowColumn>
+        </TableRow>
+        <TableRow>
+          <TableRowColumn>
+            <div className={styles.label}>DEVICE IP ADDRESS</div>
+            <div className={styles.label_detail}>{sim.ipAddress}</div>
+          </TableRowColumn>
+          <TableRowColumn>
+            <div className={styles.label}>GGSN/PGW ADDRES</div>
+            <div className={styles.label_detail}>10.22.110.13</div>
+          </TableRowColumn>
+          <TableRowColumn>
+            <div className={styles.label}>APN</div>
+            <div className={styles.label_detail}>testm2m-dc8</div>
+          </TableRowColumn>
+        </TableRow>
+      </TableBody>
+    );
+  }
+
 }
 
 export default SimDetailsInfo;
+
+SimDetailsInfo.propTypes = {
+  sim: object
+}

@@ -57,13 +57,20 @@
 						text-transform: uppercase;
 
 						>.number {
-							font-family: $omnes-medium;
-							font-size: 26px;
 
 							>span {
-								font-family: $omnes-medium;
-								font-size: 13px;
-                padding-left:7px;
+
+                &:first-child{
+                  font-family: $omnes-medium;
+						      font-size: 26px;
+                }
+
+                &:last-child{
+                  font-family: $omnes-medium;
+                  font-size: 13px;
+                  padding-left:7px;
+                }
+
 							}
 
 						}

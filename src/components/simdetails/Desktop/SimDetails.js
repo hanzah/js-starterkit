@@ -32,8 +32,8 @@ const SimDetails = ({sim}) => {
         </div>
         <div className={styles.main_wrap}>
           <ChangeStatus/>
-          <div className={styles.sim_status_diagram}><SimStatusDiagram/></div>
-          <div className={styles.sim_details_info}><SimDetailsInfo/></div>
+          <div className={styles.sim_status_diagram}><SimStatusDiagram sim={sim}/></div>
+          <div className={styles.sim_details_info}><SimDetailsInfo sim={sim}/></div>
         </div>
       </div>
       <Tabs/>
