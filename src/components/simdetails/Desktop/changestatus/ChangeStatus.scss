@@ -10,8 +10,7 @@
   opacity: 1;
   transition: opacity 1s ease 0s;
   z-index:1;
- // display: flex;
-  display: none;
+  display: flex;
   align-items: center;
 
   &.show {
@@ -20,7 +19,24 @@
 
   .circles_wrap {
     height: 191px;
-    margin-left:90px;
+    margin-left:96px;
+  }
+
+  .overlay_text{
+    float:left;
+    width:100%;
+    font-family:$omnes-regular;
+    font-size:12px;
+    color:#333333;
+    margin-top:23px;
+    text-align: center;
+    width:143px;
+    clear:both;
+
+    span{
+      padding:0 2px;
+    }
+
   }
   
 }

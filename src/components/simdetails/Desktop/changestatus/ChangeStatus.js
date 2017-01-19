@@ -53,6 +53,9 @@ class ChangeStatus extends Component {
               )
             }
           })}
+          <div className={styles.overlay_text}>
+            IN SESION <span>|</span> ACTIVE 
+          </div>
         </div>
       </div>
     );
