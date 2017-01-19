@@ -1,5 +1,5 @@
-import React, { PropTypes, Component } from 'react';
-import { FirstStatus, Status } from '../statuses/Statuses';
+import React, {PropTypes, Component} from 'react';
+import Status from '../statuses/Statuses';
 import cn from 'classnames';
 
 import styles from './ChangeStatus.scss';
@@ -34,7 +34,7 @@ class ChangeStatus extends Component {
   }
 
   handleStatusChange = (status) => {
-    this.setState({ addedClass: status });
+    this.setState({addedClass: status});
   }
 
   render() {
@@ -45,16 +45,17 @@ class ChangeStatus extends Component {
         className={cn(styles.status_overlay)}>
         <div className={styles.circles_wrap}>
           {Statuses.map((status, index) => {
-            if (index === 0) {
-              return (<FirstStatus index={index} key={index} addedClass={this.state.addedClass} status={status.status} handleStatusChange={this.handleStatusChange} />
-              )
-            } else {
-              return (<Status index={index} key={index} addedClass={this.state.addedClass} status={status.status} handleStatusChange={this.handleStatusChange} />
-              )
-            }
+            return (<Status
+              index={index}
+              key={index}
+              addedClass={this.state.addedClass}
+              status={status.status}
+              handleStatusChange={this.handleStatusChange}/>);
           })}
           <div className={styles.overlay_text}>
-            IN SESION <span>|</span> ACTIVE 
+            IN SESION
+            <span>|</span>
+            ACTIVE
           </div>
         </div>
       </div>

@@ -2,48 +2,46 @@ import React, {Component, PropTypes} from 'react';
 import cn from 'classnames';
 import styles from './Statuses.scss';
 
-const {string, func} = PropTypes;
+const {string, func, number} = PropTypes;
 
-export class FirstStatus extends Component {
+export default class Status extends Component {
   render() {
-    return (
-      <div
-        className={cn(styles.circle, styles.selected, styles[this.props.addedClass])}
-        onClick={() => this.props.handleStatusChange('active')}>
-        <div className={styles.circle_data}>
-          <div className={styles.number}>450.02
-            <span>MB</span>
+
+    if (this.props.index == 0) {
+
+      return (
+        <div
+          className={cn(styles.circle, styles.selected, styles[this.props.addedClass])}
+          onClick={() => this.props.handleStatusChange('active')}>
+          <div className={styles.circle_data}>
+            <div className={styles.number}>450.02
+              <span>MB</span>
+            </div>
+            <div className={styles.status_state}>{this.props.status}</div>
           </div>
-          <div className={styles.status_state}>{this.props.status}</div>
         </div>
-      </div>
-    );
-  }
-}
+      );
 
-FirstStatus.propTypes = {
-  addedClass: string,
-  handleStatusChange: func,
-  status: string
-}
+    } else {
+      return (
+        <div
+          className={cn(styles.circle, styles[this.props.status])}
+          onClick={() => {
+          this
+            .props
+            .handleStatusChange(this.props.status);
+        }}>
+          <span>{this.props.status}</span>
+        </div>
+      );
+    }
 
-export class Status extends Component {
-  render() {
-    return (
-      <div
-        className={cn(styles.circle, styles[this.props.status])}
-        onClick={() => {
-        this
-          .props
-          .handleStatusChange(this.props.status);
-      }}>
-        <span>{this.props.status}</span>
-      </div>
-    );
   }
 }
 
 Status.propTypes = {
+  addedClass: string,
+  handleStatusChange: func,
   status: string,
-  handleStatusChange: func
+  index: number
 }
