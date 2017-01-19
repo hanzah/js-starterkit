@@ -24,7 +24,7 @@ class SimInfo extends Component {
               <div className={styles.circle}>
                 <div>
                   <div onClick={this.handleToggleShowChangeStatus} className={styles.circle_data}>
-                    <div className={styles.number}><FormattedNumber value={sim.sessions} />
+                    <div className={styles.number}><FormattedNumber value={sim.sessions || '430'} />
                         <span>MB</span>
                     </div>
                     <div className={styles.status_state}>{sim.status}</div>

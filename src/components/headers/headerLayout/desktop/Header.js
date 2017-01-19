@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import TopBarHeader from 'components/headers/shared/topBarHeader/TopBarHeader';
 import cn from 'classnames';
 
 import styles from './Header.scss';
 
-const { func, bool, object } = PropTypes;
+const { func, bool, object, string } = PropTypes;
 
 class Header extends Component {
   render() {
@@ -11,7 +12,7 @@ class Header extends Component {
       <div className={styles.header}>
         <div className={styles.upper_header}>
           {this.renderMenu()}
-          {this.props.topBarHeader}
+          <TopBarHeader sectionTitle={this.props.sectionTitle} />
         </div>
         <div className={styles.lower_header}>
           {this.props.lowerHeader}
@@ -41,7 +42,7 @@ Header.propTypes = {
   showMenu: bool,
   button: object,
   lowerHeader: object,
-  topBarHeader: object
+  sectionTitle: string
 }
 
 export default Header;

@@ -41,8 +41,7 @@ class TopBarHeader extends Component {
 
 TopBarHeader.defaultProps = {
   userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
-  productTitle: 'PRODUCT TITLE',
-  sectionTitle: 'SIM Management'
+  productTitle: 'PRODUCT TITLE'
 }
 
 TopBarHeader.propTypes = {
