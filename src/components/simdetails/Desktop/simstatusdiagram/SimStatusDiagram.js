@@ -6,7 +6,7 @@ import { FormattedNumber } from 'react-intl';
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
 const caret = ImageSelector(CurrentContext.theme, 'caret.png');
 
-const {object} = PropTypes;
+const {object, func} = PropTypes;
 
 
 import styles from './SimStatusDiagram.scss';
@@ -23,7 +23,7 @@ class SimInfo extends Component {
             <div className={styles.mbs}>
               <div className={styles.circle}>
                 <div>
-                  <div onClick={this.handleToggleShowChangeStatus} className={styles.circle_data}>
+                  <div className={styles.circle_data}>
                     <div className={styles.number}><FormattedNumber value={sim.sessions} />
                         <span>MB</span>
                     </div>
@@ -31,7 +31,7 @@ class SimInfo extends Component {
                   </div>
                 </div>
               </div>
-              <div className={styles.session_status}>
+              <div onClick={this.props.onInSesssionClick} className={styles.session_status}>
                 <span>IN SESSION</span>
                 <span>{sim.status} <img src={caret} alt="caret"/></span>
               </div>
@@ -60,5 +60,6 @@ class SimInfo extends Component {
 export default SimInfo;
 
 SimInfo.propTypes = {
-  sim: object
+  sim: object,
+  onInSesssionClick: func 
 }
