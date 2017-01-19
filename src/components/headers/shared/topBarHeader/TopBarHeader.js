@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import SearchBar from '../searchbar';
-import UserMenu from './UserMenu';
+import UserMenu from 'components/headers/shared/userMenu/UserMenu';
 
-import styles from './Header.scss';
+import styles from './TopBarHeader.scss';
 
-const { string, bool } = PropTypes;
+const { string } = PropTypes;
 
-class UpperHeader extends Component {
+class TopBarHeader extends Component {
   render() {
     return (
       <div>
@@ -39,17 +39,16 @@ class UpperHeader extends Component {
   }
 }
 
-UpperHeader.defaultProps = {
-	userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
+TopBarHeader.defaultProps = {
+  userImage: "http://www.shreevinayakbuildestate.com/images/people-profile-dummy-219x227.jpg",
   productTitle: 'PRODUCT TITLE',
-  sectionTitle: 'SIM management'
+  sectionTitle: 'SIM Management'
 }
 
-UpperHeader.propTypes = {
-	userImage: string,
-	showMenu: bool,
+TopBarHeader.propTypes = {
+  userImage: string,
   productTitle: string,
   sectionTitle: string
 }
 
-export default UpperHeader;
+export default TopBarHeader;

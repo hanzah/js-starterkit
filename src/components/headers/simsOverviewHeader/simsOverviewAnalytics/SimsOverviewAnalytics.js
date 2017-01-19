@@ -2,7 +2,7 @@ import React from 'react';
 import CurrentContext from 'utils/currentContext';
 import ImageSelector from 'utils/imageSelector';
 
-import styles from '../desktop/Header.scss';
+import styles from 'components/headers/shared/Analytics.scss';
 
 const status = ImageSelector(CurrentContext.theme, 'sim-inventory-status-chart.png');
 const inventory = ImageSelector(CurrentContext.theme, 'sim-inventory-by-carrier.png');
@@ -10,7 +10,7 @@ const country = ImageSelector(CurrentContext.theme, 'sim-inventory-by-country.pn
 
 const SimsOverviewAnalytics = () => {
   return (
-    <div>
+    <div className={styles.chart_wrapper}>
     <div className={styles.charts} style={{ width: '30%' }}>
       <div className={styles.chart_images}><img src={status} alt="Status" /></div>
       <div className={styles.chart_names}>Inventory by Status</div>
