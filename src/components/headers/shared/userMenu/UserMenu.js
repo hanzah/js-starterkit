@@ -4,7 +4,7 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-import styles from './Header.scss';
+import styles from './UserMenu.scss';
 import menuStyles from './UserMenuStyle';
 
 const UserMenu = () => {

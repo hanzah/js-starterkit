@@ -1,4 +1,4 @@
-import Desktop from './desktop/Header';
+import Desktop from './desktop/Header.js';
 import { connect } from 'react-redux'
 import { toggleMenu } from 'redux/ui/actions'
 import * as Selectors from 'redux/selectors'

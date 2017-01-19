@@ -1,0 +1,26 @@
+.chart_wrapper {
+  display: flex;
+  .charts {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    flex-flow: column;
+    justify-content: flex-end;
+    .chart_images {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .chart_names {
+      font-family: 'omnes_att_iimedium';
+      font-size: 13px;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+}

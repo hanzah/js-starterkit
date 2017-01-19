@@ -5,12 +5,12 @@ import ContentEdit from 'material-ui/svg-icons/content/create';
 import styles from './EditButton.scss';
 import inlineStyles from './EditButtonStyle.js';
 
-const {func, bool} = PropTypes;
+const {func} = PropTypes;
 
-const EditButton = ({handleClick, buttonStatus}) => {
+const EditButton = ({handleClick}) => {
   return (
     <div className={styles.floater_button_possition} data-spec='edit-button'>
-      <FloatingActionButton onClick={handleClick} backgroundColor={inlineStyles.backgroundColor} disabledColor={inlineStyles.disabledColor} iconStyle={{ fill: inlineStyles.fill }} disabled={buttonStatus}>
+      <FloatingActionButton onClick={handleClick} backgroundColor={inlineStyles.backgroundColor}>
         <ContentEdit />
       </FloatingActionButton>
     </div>
@@ -18,8 +18,7 @@ const EditButton = ({handleClick, buttonStatus}) => {
 }
 
 EditButton.propTypes = {
-  handleClick: func,
-  buttonStatus: bool
+  handleClick: func
 }
 
 export default EditButton;
