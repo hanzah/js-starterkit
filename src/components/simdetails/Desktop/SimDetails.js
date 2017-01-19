@@ -5,7 +5,7 @@ import SimDetailsInfo from './simdetailsinfo';
 import ChangeStatus from './changestatus';
 import Tabs from './tabs';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 
 const pending = ImageSelector(CurrentContext.theme, 'pending.png');
 

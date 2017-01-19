@@ -55,13 +55,11 @@ class SimDetailsInfo extends Component {
         </div>
         {this.handleViewMoreText()
           ? <a
-              href="javascript:void(0)"
               className={styles.view_table_info}
               onClick={this.handleShowDetails}
               title="View less">View less</a>
           : <a
             className={styles.view_table_info}
-            href="javascript:void(0)"
             onClick={this.handleShowDetails}
             title="View details">View details</a>
 }

@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import styles from './ChangeStatus.scss';
 
-const {func, bool} = PropTypes;
+const {func, object} = PropTypes;
 
 const Statuses = [
   {
@@ -69,5 +69,5 @@ export default ChangeStatus;
 
 ChangeStatus.propTypes = {
   handleToggleShowChangeStatus: func,
-  sim: bool
+  sim: object
 }
