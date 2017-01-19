@@ -13,7 +13,22 @@ import styles from './SimDetails.scss';
 
 const {object} = PropTypes
 
-const SimDetails = ({sim}) => {
+class SimDetails extends React.Component{
+
+  constructor(props){
+    super(props);
+
+    this.state ={
+      showChangeStatus : false
+    }
+  }
+
+  onInSesssionClick = () =>{
+      this.setState({showChangeStatus : !this.showChangeStatus });
+  }
+
+  render() {
+    const sim = this.props.sim;
   return (
     <div>
       <SimDetailsHeader sim={sim}/>
@@ -31,14 +46,15 @@ const SimDetails = ({sim}) => {
           </div>
         </div>
         <div className={styles.main_wrap}>
-          <ChangeStatus sim={sim}/>
-          <div className={styles.sim_status_diagram}><SimStatusDiagram sim={sim}/></div>
+        {this.state.showChangeStatus ? <ChangeStatus sim={sim}/> : ''}
+          <div className={styles.sim_status_diagram}><SimStatusDiagram onInSesssionClick={this.onInSesssionClick } sim={sim}/></div>
           <div className={styles.sim_details_info}><SimDetailsInfo sim={sim}/></div>
         </div>
       </div>
       <Tabs/>
     </div>
   );
+  }
 }
 
 SimDetails.propTypes = {

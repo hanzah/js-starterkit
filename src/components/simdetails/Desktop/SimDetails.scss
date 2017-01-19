@@ -23,7 +23,8 @@
 	width: 100%;
 	height: 50px;
 	background-color: rgb(179, 10, 60);
-	display: table;
+	//display: table;
+  display:none;
 
   .pending_img{
     display:table-cell;

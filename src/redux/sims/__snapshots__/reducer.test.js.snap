@@ -1,0 +1,61 @@
+exports[`Welcome Reducer should return changed state 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVATION READY",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "INACTIVE",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": undefined,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return initial state 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVATION READY",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "INACTIVE",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+  },
+}
+`;
