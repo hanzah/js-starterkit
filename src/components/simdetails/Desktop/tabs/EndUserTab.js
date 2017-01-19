@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 import styles from './SimDetailsTabs.scss';
 
 const user = ImageSelector(CurrentContext.theme, 'user-info-o.png');

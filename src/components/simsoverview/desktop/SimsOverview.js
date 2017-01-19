@@ -51,7 +51,9 @@ class SimTable extends React.Component {
             className={styles.mc_sim_table}
             fixedHeader
             multiSelectable
-            onRowSelection={this.onRowSelection}>
+            onRowSelection={this.onRowSelection}
+						onCellClick={this.onCellClick}
+					>
             <TableHeader>
               {this.renderHeader()}
             </TableHeader>
@@ -69,8 +71,6 @@ class SimTable extends React.Component {
       <TableRow>
         <TableHeaderColumn><FormattedMessage id="SIMNUMBER" defaultMessage="SIM NUMBER" /></TableHeaderColumn>
         <TableHeaderColumn><FormattedMessage id="DATARATEPLAN" defaultMessage="DATA RATE PLAN" /></TableHeaderColumn>
-        <TableHeaderColumn><FormattedMessage id="ACTIVESESSION" defaultMessage="ACTIVE SESSION" /></TableHeaderColumn>
-        <TableHeaderColumn><FormattedMessage id="IPADDRESS" defaultMessage="IP ADDRESS" /></TableHeaderColumn>
         <TableHeaderColumn><FormattedMessage id="NETWORK" defaultMessage="NETWORK" /></TableHeaderColumn>
         <TableHeaderColumn><FormattedMessage id="COUNTRY" defaultMessage="COUNTRY" /></TableHeaderColumn>
         <TableHeaderColumn><FormattedMessage id="STATUS" defaultMessage="STATUS" /></TableHeaderColumn>
@@ -84,8 +84,6 @@ class SimTable extends React.Component {
           <TableRow key={sim.number} selected={!!this.props.selectedSims[sim.number]}>
             <TableRowColumn>{sim.number}</TableRowColumn>
             <TableRowColumn>{sim.plan}</TableRowColumn>
-            <TableRowColumn>{sim.sessions} Mb</TableRowColumn>
-            <TableRowColumn>{sim.ipAddress}</TableRowColumn>
             <TableRowColumn>{sim.network}</TableRowColumn>
             <TableRowColumn>{sim.country}</TableRowColumn>
             <TableRowColumn className={statusClass(sim.status)}><div><span></span>{sim.status}</div></TableRowColumn>
@@ -95,6 +93,10 @@ class SimTable extends React.Component {
   }
 
   onRowSelection = (selectedRows) => {
+    if(this.skipSelection){
+      this.skipSelection = false
+      return
+    }
     let sims;
     switch (selectedRows) {
       case 'all':
@@ -110,17 +112,22 @@ class SimTable extends React.Component {
         })
 
     }
-    this
-      .props
-      .onRowSelection(sims)
+    this.props.onRowSelection(sims)
   }
+
+	onCellClick = (row, column) => {
+		if(column === -1) return
+    this.skipSelection = true
+		this.props.gotToSimDetails(this.props.sims[row]);
+	}
 }
 
 SimTable.propTypes = {
   sims: array,
   onRowSelection: func,
   selectedSims: object,
-  showOptions: bool
+  showOptions: bool,
+	gotToSimDetails: func
 }
 
 export default SimTable;

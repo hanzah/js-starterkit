@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/ImageSelector'
+import ImageSelector from 'utils/imageSelector'
 import styles from './SimDetailsTabs.scss';
 
 const diagnostics_check = ImageSelector(CurrentContext.theme, 'diagnostics-check.png');

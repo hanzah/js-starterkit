@@ -5,10 +5,10 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/imageSelector'
 
+import styles from './AddButton.scss';
+
 const AddSim = ImageSelector(CurrentContext.theme, 'svgs/add-sim.svg');
 const AddSims = ImageSelector(CurrentContext.theme, 'svgs/add-multiple-sims.svg');
-
-import styles from './AddButton.scss';
 
 const {func} = PropTypes;
 

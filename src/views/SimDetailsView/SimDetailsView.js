@@ -1,15 +1,23 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 import { DesktopMediaQuery } from 'utils/CustomMediaQuery'
 import { DesktopSimDetails } from 'components/simdetails'
+import DesktopSimDetailsHeader from 'components/headers/simdetailsheader'
 
-export default class SimDetailsView extends Component {
-  render() {
+const { object } = PropTypes
+
+ const SimDetailsView = ({ params }) => {
     return (
       <element>
         <DesktopMediaQuery>
-          <DesktopSimDetails name="desktop" />
+          <DesktopSimDetailsHeader name="desktop" />
+          <DesktopSimDetails name="desktop" number={params.number}/>
         </DesktopMediaQuery>
       </element>
     );
-  }
 }
+
+SimDetailsView.propTypes = {
+	params: object
+}
+
+export default SimDetailsView

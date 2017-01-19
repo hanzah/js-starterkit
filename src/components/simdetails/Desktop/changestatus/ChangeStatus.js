@@ -1,10 +1,10 @@
-import React, { PropTypes, Component } from 'react';
-import { FirstStatus, Status } from '../statuses/Statuses';
+import React, {PropTypes, Component} from 'react';
+import Status from '../statuses/Statuses';
 import cn from 'classnames';
 
 import styles from './ChangeStatus.scss';
 
-const {func} = PropTypes;
+const {func, object} = PropTypes;
 
 const Statuses = [
   {
@@ -34,10 +34,12 @@ class ChangeStatus extends Component {
   }
 
   handleStatusChange = (status) => {
-    this.setState({ addedClass: status });
+    this.setState({addedClass: status});
   }
 
   render() {
+
+    const sim = this.props.sim;
 
     return (
       <div
@@ -45,14 +47,18 @@ class ChangeStatus extends Component {
         className={cn(styles.status_overlay)}>
         <div className={styles.circles_wrap}>
           {Statuses.map((status, index) => {
-            if (index === 0) {
-              return (<FirstStatus index={index} key={index} addedClass={this.state.addedClass} status={status.status} handleStatusChange={this.handleStatusChange} />
-              )
-            } else {
-              return (<Status index={index} key={index} addedClass={this.state.addedClass} status={status.status} handleStatusChange={this.handleStatusChange} />
-              )
-            }
+            return (<Status
+              index={index}
+              key={index}
+              addedClass={this.state.addedClass}
+              status={status.status}
+              handleStatusChange={this.handleStatusChange}/>);
           })}
+          <div className={styles.overlay_text}>
+            IN SESION
+            <span>|</span>
+            {sim.status}
+          </div>
         </div>
       </div>
     );
@@ -62,5 +68,6 @@ class ChangeStatus extends Component {
 export default ChangeStatus;
 
 ChangeStatus.propTypes = {
-  handleToggleShowChangeStatus: func
+  handleToggleShowChangeStatus: func,
+  sim: object
 }
