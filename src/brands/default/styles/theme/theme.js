@@ -8,5 +8,9 @@ export default {
       bodyPadding: 0,
       footerPadding:25,
       fotterPaddingBottomTop:14
+    },
+      tabs: {
+      textColor: '#666666',
+      selectedTextColor: '#0073bc'
     }
 }
