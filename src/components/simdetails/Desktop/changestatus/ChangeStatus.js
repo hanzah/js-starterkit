@@ -27,33 +27,39 @@ const Statuses = [
   }
 ]
 
-const dialogContent = () => {
+const DialogContent = (props) => {
   return (
     <div className={styles.dialog_wrap}>
       <div className={styles.modal_top}>
         <div className={styles.modal_text}>Please select date to set up your changes and confirm.</div>
         <div className={styles.field_title}>DATE (OBLIGATORY)</div>
         <DatePicker
-          underlineFocusStyle={fieldStyle.underlineStyle}
+          onChange={props.onDateChange}
+          underlineFocusStyle={fieldStyle.underlineFocusStyle}
           underlineStyle={fieldStyle.underlineStyle}
-          textFieldStyle={fieldStyle.hintStyle}
+          textFieldStyle={fieldStyle.datepicker.style}
           hintStyle={fieldStyle.hintStyle}
           hintText="DD/MM/YY"/>
       </div>
       <div className={styles.modal_bottom}>
         <div className={styles.field_title}>ADDITIONAL COMMENT</div>
         <TextField
-          inputStyle={fieldStyle.hintStyle}
-          underlineFocusStyle={fieldStyle.underlineStyle}
+          inputStyle={fieldStyle.inputStyle}
+          underlineFocusStyle={fieldStyle.underlineFocusStyle}
           underlineStyle={fieldStyle.underlineStyle}
           hintStyle={fieldStyle.hintStyle}
           fullWidth={true}
           multiLine={true}
+          style={fieldStyle.style}
           rowsMax={4}
           hintText="Add your optional comment about change here."/>
       </div>
     </div>
   );
+}
+
+DialogContent.propTypes ={
+  onDateChange: func
 }
 
 class ChangeStatus extends Component {
@@ -63,13 +69,18 @@ class ChangeStatus extends Component {
 
     this.state = {
       addedClass: 'active',
-      openModal: false
+      openModal: false,
+      confirmDisabled:true
     }
 
   }
 
   onModalCancel = () => {
-    this.setState({openModal: false})
+    this.setState({openModal: false, confirmDisabled:true})
+  }
+
+  onDateChange = () => {
+      this.setState({confirmDisabled:false});
   }
 
   handleStatusChange = (status) => {
@@ -79,18 +90,10 @@ class ChangeStatus extends Component {
   render() {
 
     const sim = this.props.sim;
-    const actions = [ < RaisedButton style = {
-        buttonStyle.cancel.style
-      }
-      labelStyle = {
-        buttonStyle.cancel.labelStyle
-      }
-      onClick = {
-        this.onModalCancel
-      }
-      key = "Cancel" label = "Cancel" />, < RaisedButton key = "Confirm" label = "Confirm" primary = {
-        true
-      } />
+    const actions = [ 
+      <RaisedButton buttonStyle={buttonStyle.cancel.style} style={buttonStyle.cancel.style} labelStyle = {buttonStyle.cancel.labelStyle}
+      onClick={this.onModalCancel} key="Cancel" label="Cancel" />, 
+      <RaisedButton disabled={this.state.confirmDisabled} overlayStyle={buttonStyle.confirm.overlayStyle} buttonStyle={buttonStyle.confirm.style} key="Confirm" label = "Confirm" primary = {true} />
     ];
 
     return (
@@ -101,7 +104,7 @@ class ChangeStatus extends Component {
           actions={actions}
           open={this.state.openModal}
           title="CONFIRM CHANGES">
-          {dialogContent()}
+          <DialogContent onDateChange={this.onDateChange}/>
         </ConfirmModal>
         <div className={styles.circles_wrap}>
           {Statuses.map((status, index) => {

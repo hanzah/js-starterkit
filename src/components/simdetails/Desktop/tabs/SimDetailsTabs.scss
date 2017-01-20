@@ -1,6 +1,5 @@
 @import "~components/simdetails/SimDetails";
 .tabs_container {
-  color: #666666 !important;
   >div>div:first-child {
     background-color: #f6f6f6 !important;
     border-bottom: 1px solid #dfe2e5;
@@ -25,7 +24,6 @@
     >div>div {
       font-family: 'omnes_att_iimedium' !important;
       font-size: 14px;
-      color: #666666;
     }
   }
 }
