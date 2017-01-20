@@ -1,0 +1,96 @@
+.mc_sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgb(242, 242, 242);
+	z-index: 10;
+	height: 100%;
+	width: 130px;
+	.mc_att_logo {
+		float: left;
+		width: 100%;
+		text-align: center;
+		padding: 21px 0;
+
+		img {
+			width: 35px;
+		}
+
+	}
+
+	>ul {
+		float: left;
+		width: 100%;
+
+		>li {
+			text-align: center;
+			height: 70px;
+
+			>a {
+				float: left;
+				width: 100%;
+				height: 100%;
+				text-decoration: none;
+				position: relative;
+				display: table;
+				padding: 0 10px;
+
+				>div {
+					display: table-cell;
+					vertical-align: middle;
+
+					>svg {
+						width: 25px;
+
+						path {
+							fill:#666666;
+						}
+
+					}
+				}
+
+				span {
+					display: block;
+					width: 100%;
+					text-align: center;
+					font-family: $omnes-medium;
+					font-size: 12px;
+					color: #666666;
+					line-height: 70%;
+					text-transform: uppercase;
+				}
+
+			}
+
+			&:last-child {
+
+				>a {
+					position: absolute;
+					float: none;
+					height: 70px;
+					bottom: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+.appear {
+	width: 0;
+
+	&.appear_active {
+		width: 130px;
+		transition: width .5s ease-out;
+	}
+}
+
+.leave {
+	width: 130px;
+
+	&.leave_active {
+		width: 0;
+		transition: width .5s ease-in;
+	}
+}
