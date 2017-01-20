@@ -3,7 +3,7 @@ import Status from '../statuses/Statuses';
 import cn from 'classnames';
 import ConfirmModal from 'components/confirmmodal';
 import RaisedButton from 'material-ui/RaisedButton';
-import buttonStyle from './style';
+import {buttonStyle, fieldStyle} from './style';
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 
@@ -30,12 +30,28 @@ const Statuses = [
 const dialogContent = () => {
   return (
     <div className={styles.dialog_wrap}>
-      <div>Please select date to set up your changes and confirm.</div>
-      <div>DATE (OBLIGATORY)</div>
-      <DatePicker hintText="DD/MM/YY"/>
-      <div>ADDITIONAL COMMENT</div>
-      <TextField fullWidth={true} multiLine={true} hintText="Add your optional comment about change here."/>
-
+      <div className={styles.modal_top}>
+        <div className={styles.modal_text}>Please select date to set up your changes and confirm.</div>
+        <div className={styles.field_title}>DATE (OBLIGATORY)</div>
+        <DatePicker
+          underlineFocusStyle={fieldStyle.underlineStyle}
+          underlineStyle={fieldStyle.underlineStyle}
+          textFieldStyle={fieldStyle.hintStyle}
+          hintStyle={fieldStyle.hintStyle}
+          hintText="DD/MM/YY"/>
+      </div>
+      <div className={styles.modal_bottom}>
+        <div className={styles.field_title}>ADDITIONAL COMMENT</div>
+        <TextField
+          inputStyle={fieldStyle.hintStyle}
+          underlineFocusStyle={fieldStyle.underlineStyle}
+          underlineStyle={fieldStyle.underlineStyle}
+          hintStyle={fieldStyle.hintStyle}
+          fullWidth={true}
+          multiLine={true}
+          rowsMax={4}
+          hintText="Add your optional comment about change here."/>
+      </div>
     </div>
   );
 }
