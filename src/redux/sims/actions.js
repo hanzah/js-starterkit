@@ -1,7 +1,8 @@
 import { createAction } from 'redux-actions'
 
 import {
-  SIMS_SELECTED
+  SIMS_SELECTED,
+	TOGGLE_SIM_STATUS_MODAL
 } from './constants'
 
 const simsSelect = createAction(SIMS_SELECTED)
@@ -13,3 +14,5 @@ export const simsSelected = (sims) => (dispatch) => {
 	}, {})
 	dispatch(simsSelect(selectedSims))
 }
+
+export const toggleSimStatusModal = createAction(TOGGLE_SIM_STATUS_MODAL)
