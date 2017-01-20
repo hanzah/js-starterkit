@@ -12,16 +12,15 @@
 
 .upper_header {
   width: 100%;
-  height: 85px;
+  height: 75px;
   padding: 20px 10px 10px 20px;
   z-index: 10;
 }
 
 .lower_header {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  padding: 20px 20px 20px 20px;
+  height: 285px;
   z-index: -10;
 }
 

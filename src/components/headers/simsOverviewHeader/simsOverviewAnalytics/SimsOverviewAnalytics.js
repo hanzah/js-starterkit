@@ -13,7 +13,7 @@ const SimsOverviewAnalytics = () => {
     <div className={styles.chart_wrapper}>
     <div className={styles.charts} style={{ width: '30%' }}>
       <div className={styles.chart_images}><img src={status} alt="Status" /></div>
-      <div className={styles.chart_names}>Inventory by Status</div>
+      <div className={styles.chart_names}>Inventory Status</div>
     </div>
     <div className={styles.charts} style={{ width: '35%' }}>
       <div className={styles.chart_images}><img src={inventory} alt="Inventory" /></div>
