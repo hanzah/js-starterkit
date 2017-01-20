@@ -4,7 +4,6 @@ import ContentEdit from 'material-ui/svg-icons/content/create';
 
 import styles from './EditButton.scss';
 import inlineStyles from './EditButtonStyle.js';
-
 const {func} = PropTypes;
 
 const EditButton = ({handleClick}) => {
