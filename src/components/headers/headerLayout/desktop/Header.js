@@ -3,7 +3,7 @@ import TopBarHeader from 'components/Headers/Shared/TopBarHeader';
 import cn from 'classnames';
 
 import styles from './Header.scss';
-import inlineStyle from './HeaderStyle.scss';
+import inlineStyle from './HeaderStyle';
 
 const { func, bool, object, string } = PropTypes;
 
