@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* global Promise */
 import { addLocaleData } from 'react-intl';
+import Promise from 'bluebird';
 
 const LOCALES = {
 	en: () => require('react-intl/locale-data/en'),
@@ -8,7 +9,7 @@ const LOCALES = {
 }
 
 export const loadLanguages = (theme, locale) => {
-	return new Promise((resolve) => {
+	return new Promise(function(resolve) {
 		const baseLng = locale.split('-')[0]
 		const MESSAGES = {
 			default: loadDefaultMessages(locale, baseLng),

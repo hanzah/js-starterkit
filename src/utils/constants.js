@@ -10,7 +10,7 @@ export default {
 
 export const getTheme = () => {
 	const subdomain = location.hostname.split('.')[0]
-	if(SUBDOMAINS.includes(subdomain)) {
+	if(SUBDOMAINS.indexOf(subdomain) > 0) {
 		return subdomain
 	}
 	return 'default'
@@ -18,11 +18,11 @@ export const getTheme = () => {
 
 export const getLocale = () => {
 	let subdomainLocale = location.hostname.split('.')[1]
-	if(LOCALES.includes(subdomainLocale)) {
+	if(LOCALES.indexOf(subdomainLocale) > 0) {
 		return formatLocale(subdomainLocale)
 	}
 	const locale = navigator.language
-	if(LOCALES.includes(locale.toLowerCase())) {
+	if(LOCALES.indexOf(locale.toLowerCase()) > 0) {
 		return formatLocale(locale)
 	}
 	return 'en-US'
