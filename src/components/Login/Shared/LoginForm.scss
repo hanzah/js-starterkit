@@ -8,6 +8,7 @@
 .title {
   height: 110px;
   padding-top: 45px;
+
   >div:first-child {
     font-family: $omnes-medium;
     font-size: 21px;
@@ -16,12 +17,14 @@
     letter-spacing: 1px;
     padding-bottom: 10px;
   }
+
   >div:last-child {
     font-family: $omnes-regular;
     font-size: 13px;
     font-weight: 600;
     color: #5a5a5a;
   }
+
 }
 
 .field_containter {
@@ -29,11 +32,13 @@
   flex-direction: column;
   height: 230px;
   justify-content: center;
+
   .field_title {
     font-family: $omnes-medium;
     font-size: 10px;
     color: #0056ae;
   }
+
 }
 
 .button_containter {
@@ -43,23 +48,34 @@
 
 .checkbox_wrapper {
   float: left;
+
   .checkbox {
     font-family: $omnes-regular;
     font-size: 11px;
     color: #5a5a5a;
     width: 132px !important;
     float: left;
+
     >div>div {
       margin-right: 5px !important;
     }
+
   }
-  .forgot_password {
+
+  .forgot_password_wrapper {
     float: right;
-    font-family: $omnes-medium;
-    font-size: 11px;
-    color: #0568ae;
-    margin-top: 6px;
+
+    >.forgot_password {
+      font-family: $omnes-medium;
+      font-size: 11px;
+      color: #0568ae;
+      margin-top: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
   }
+
 }
 
 .wrong_password {
@@ -67,37 +83,47 @@
   float: left;
   width: 100%;
   height: 60px;
-  background-color: rgb(179, 10, 60);
+  background-color: #cf2a2a;
   display: table;
   //display:none;
   border-radius: 0px 5px 0px 0px;
+
   .warning_img {
     display: table-cell;
     vertical-align: middle;
     padding-left: 16px;
     width: 55px;
   }
+
   .wrong_pass_text {
     float: left;
     display: table;
     height: 100%;
+
     div {
       display: table-cell;
       vertical-align: middle;
+
       div {
+        
         &:first-child {
           font-family: $omnes-medium;
           font-size: 13px;
           color: #fff;
           display: block;
         }
+
         &:last-child {
           font-family: $omnes-regular;
           font-size: 10px;
           color: #fff;
           display: block;
         }
+
       }
+
     }
+
   }
+
 }

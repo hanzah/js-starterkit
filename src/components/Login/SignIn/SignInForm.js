@@ -60,7 +60,9 @@ class SignInForm extends Component {
                 className={styles.checkbox}
                 iconStyle={checkboxStyle.iconStyle}
                 />
-              <div className={styles.forgot_password}><Link data-spec='forgot-password'>Forgot password?</Link></div>
+              <div className={styles.forgot_password_wrapper}><a data-spec='forgot-password' onClick={this.props.forgotPassword}
+                className={styles.forgot_password}>Forgot password?</a>
+              </div>
             </div>
           </div>
           <div className={styles.button_containter}>
@@ -82,7 +84,8 @@ SignInForm.propTypes = {
   title: string,
   subtitle: string,
   login: func,
-  request: func
+  request: func,
+  forgotPassword: func
 }
 
 export default SignInForm;
