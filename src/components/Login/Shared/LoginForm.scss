@@ -1,0 +1,63 @@
+.form_containter {
+  display: flex;
+  padding: 0 45px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  height: 110px;
+  padding-top: 45px;
+  >div:first-child {
+    font-family: $omnes-medium;
+    font-size: 21px;
+    font-weight: 600;
+    color: #5a5a5a;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+  }
+  >div:last-child {
+    font-family: $omnes-regular;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5a5a5a;
+  }
+}
+
+.field_containter {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  justify-content: center;
+  .field_title {
+    font-family: $omnes-medium;
+    font-size: 10px;
+    color: #0056ae;
+  }
+}
+
+.button_containter {
+  height: 110px;
+  padding-bottom: 10px;
+}
+
+.checkbox_wrapper {
+  float: left;
+  .checkbox {
+    font-family: $omnes-regular;
+    font-size: 11px;
+    color: #5a5a5a;
+    width: 132px !important;
+    float: left;
+    >div>div {
+      margin-right: 5px !important;
+    }
+  }
+  .forgot_password {
+    float: right;
+    font-family: $omnes-medium;
+    font-size: 11px;
+    color: #0568ae;
+    margin-top: 6px;
+  }
+}
