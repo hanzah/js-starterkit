@@ -1,9 +1,9 @@
 import React from 'react';
 import Login from '../LoginLayout/Desktop';
 import Logo from '../Shared/LoginLogo';
-import Form from './SignInForm';
+import Form from './ResetPasswordForm';
 
-const SignIn = () => {
+const ResetPassword = () => {
   return (
     <div data-spec='sign-in-screen'>
       <Login logo={<Logo />} form={<Form />} />
@@ -11,4 +11,4 @@ const SignIn = () => {
   );
 }
 
-export default SignIn;
+export default ResetPassword;

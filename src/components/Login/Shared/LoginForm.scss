@@ -61,3 +61,53 @@
     margin-top: 6px;
   }
 }
+
+.pending_changes {
+  position: absolute;
+	float: left;
+	width: 100%;
+	height: 60px;
+	background-color: rgb(179, 10, 60);
+	display: table;
+  //display:none;
+    border-radius: 0px 5px 0px 0px;
+
+  .pending_img{
+    display:table-cell;
+    vertical-align: middle;
+    padding-left:16px;
+    width:55px;
+  }
+
+	.pending_text {
+		float: left;
+		display: table;
+    height: 100%;
+
+		div {
+      display: table-cell;
+      vertical-align: middle;
+
+			div {
+
+				&:first-child {
+					font-family: $omnes-medium;
+					font-size: 13px;
+					color: #fff;
+          display: block;
+				}
+
+				&:last-child {
+					font-family: $omnes-regular;
+					font-size: 10px;
+					color: #fff;
+           display: block;
+				}
+        
+			}
+
+		}
+
+	}
+
+}

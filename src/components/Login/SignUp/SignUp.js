@@ -1,7 +1,9 @@
 import React from 'react';
 import Login from '../LoginLayout/Desktop';
 import Logo from '../Shared/LoginLogo';
-import Form from './SignInForm';
+import Form from './SignUpForm';
+
+import styles from '../Shared/LoginForm.scss'
 
 const SignIn = () => {
   return (

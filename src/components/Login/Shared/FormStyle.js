@@ -1,5 +1,5 @@
 export const buttonStyle = {
-  request: {
+  secondary: {
     labelStyle: {
       color: '#0073bc',
     },
@@ -8,7 +8,7 @@ export const buttonStyle = {
       height: 45
     }
   },
-  login: {
+  primary: {
     style: {
       height: 45
     },

@@ -6,19 +6,33 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 
-import styles from '../../Shared/LoginForm.scss';
-import { buttonStyle, fieldStyle, checkboxStyle } from '../../Shared/FormStyle';
+import styles from '../Shared/LoginForm.scss';
+import { buttonStyle, fieldStyle, checkboxStyle } from '../Shared/FormStyle';
 
 const PreviewIcon = ImageSelector(CurrentContext.theme, 'svgs/preview.svg');
+const pending = ImageSelector(CurrentContext.theme, 'pending.png');
 
 const {string, func} = PropTypes;
 
 class SignInForm extends Component {
   render() {
     return (
+      <div>
+      <div className={styles.pending_changes}>
+          <div className={styles.pending_img}>
+            <img src={pending} alt="pending"/>
+          </div>
+          <div className={styles.pending_text}>
+            <div>
+              <div>Wrong Password!</div>
+              <div>Password does not match provided email.</div>
+            </div>
+          </div>
+        </div>
       <div className={styles.form_containter}>
-        <div className={styles.title}>
-          <div data-spec='title'>{this.props.title}</div>
+      
+        <div className={styles.title} style={{paddingTop:70}}>
+          <div data-spec='title' >{this.props.title}</div>
           <div data-spec='subtitle'>{this.props.subtitle}</div>
         </div>
         <div className={styles.field_containter}>
@@ -51,9 +65,10 @@ class SignInForm extends Component {
           </div>
         </div>
         <div className={styles.button_containter}>
-          <RaisedButton data-spec='login-button' overlayStyle={buttonStyle.login.overlayStyle} buttonStyle={buttonStyle.login.style} key="Login" label="Log In" primary={true} fullWidth={true} onClick={this.props.login} />
-          <RaisedButton data-spec='request-access-button' buttonStyle={buttonStyle.request.style} style={buttonStyle.request.style} labelStyle={buttonStyle.request.labelStyle} key="Request" label="Request Access" fullWidth={true} onClick={this.props.request} />
+          <RaisedButton data-spec='login-button' overlayStyle={buttonStyle.primary.overlayStyle} buttonStyle={buttonStyle.primary.style} key="Login" label="Log In" primary={true} fullWidth={true} onClick={this.props.login} />
+          <RaisedButton data-spec='request-access-button' buttonStyle={buttonStyle.secondary.style} style={buttonStyle.secondary.style} labelStyle={buttonStyle.secondary.labelStyle} key="Request" label="Request Access" fullWidth={true} onClick={this.props.request} />
         </div>
+      </div>
       </div>
     );
   }

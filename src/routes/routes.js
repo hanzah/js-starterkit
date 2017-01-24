@@ -9,9 +9,8 @@ import LoginView from 'views/LoginView'
 /* eslint-disable react/display-name */
 export default () => (
   <Route>
-        <Route path='login' component={LoginView} />
+    <Route path='login' component={LoginView} />
     <Route path='/' component={MainLayout}>
-
       <Route path="sims">
         <IndexRoute component={SimsIndexView} />
         <Route path=":number" component={SimDetailsView} />
