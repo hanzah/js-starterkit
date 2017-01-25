@@ -1,13 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
-import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/imageSelector'
 import RaisedButton from 'material-ui/RaisedButton';
 
 import styles from '../Shared/LoginForm.scss';
 import { buttonStyle, fieldStyle } from '../Shared/FormStyle';
-
-const PreviewIcon = ImageSelector(CurrentContext.theme, 'svgs/preview.svg');
 
 const {string, func} = PropTypes;
 

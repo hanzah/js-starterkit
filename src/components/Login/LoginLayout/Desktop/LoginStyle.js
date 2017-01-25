@@ -1,5 +1,5 @@
-import CurrentContext from 'utils/currentContext'
-import ImageSelector from 'utils/imageSelector'
+import CurrentContext from 'utils/currentContext';
+import ImageSelector from 'utils/imageSelector';
 
 const Background = ImageSelector(CurrentContext.theme, 'loginbckg.png');
 
@@ -11,4 +11,4 @@ const inlineStyles = {
   }
 };
 
-export default inlineStyles
+export default inlineStyles;
