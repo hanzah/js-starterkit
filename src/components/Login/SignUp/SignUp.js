@@ -3,8 +3,6 @@ import Login from '../LoginLayout/Desktop';
 import Logo from '../Shared/LoginLogo';
 import Form from './SignUpForm';
 
-import styles from '../Shared/LoginForm.scss'
-
 const SignIn = () => {
   return (
     <div data-spec='sign-in-screen'>

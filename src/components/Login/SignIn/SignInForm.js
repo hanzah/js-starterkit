@@ -4,17 +4,33 @@ import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/imageSelector'
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
-import { Link } from 'react-router';
 
 import styles from '../Shared/LoginForm.scss';
 import { buttonStyle, fieldStyle, checkboxStyle } from '../Shared/FormStyle';
 
-const PreviewIcon = ImageSelector(CurrentContext.theme, 'svgs/preview.svg');
 const warning = ImageSelector(CurrentContext.theme, 'pending.png');
+const Preview = ImageSelector(CurrentContext.theme, 'svgs/preview.svg');
 
 const {string, func} = PropTypes;
 
 class SignInForm extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      type: 'password'
+    }
+  }
+
+  onMouseDown = () => {
+    this.setState({type: 'text'})
+  }
+
+  onMouseUp = () => {
+    this.setState({type: 'password'})
+  }
+
   render() {
     return (
       <div>
@@ -41,18 +57,20 @@ class SignInForm extends Component {
               underlineFocusStyle={fieldStyle.underlineFocusStyle}
               underlineStyle={fieldStyle.underlineStyle}
               fullWidth={true}
-              style={fieldStyle.style}
               id="email" />
             <br />
             <div className={styles.field_title}>PASSWORD</div>
-            <TextField
-              inputStyle={fieldStyle.inputStyle}
-              underlineFocusStyle={fieldStyle.underlineFocusStyle}
-              underlineStyle={fieldStyle.underlineStyle}
-              fullWidth={true}
-              style={fieldStyle.style}
-              type="password"
-              id="password" /><br />
+            <div className={styles.password_wrapper}>
+              <Preview className={styles.preview_password} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}/>
+              <TextField
+                inputStyle={fieldStyle.inputStyle}
+                underlineFocusStyle={fieldStyle.underlineFocusStyle}
+                underlineStyle={fieldStyle.underlineStyle}
+                fullWidth={true}
+                style={fieldStyle.style}
+                type={this.state.type}
+                id="password" /></div>
+            <br />
             <div className={styles.checkbox_wrapper}>
               <Checkbox
                 data-spec='remember-me'

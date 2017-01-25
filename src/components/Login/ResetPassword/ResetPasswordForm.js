@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import styles from '../Shared/LoginForm.scss';
-import { buttonStyle, fieldStyle, checkboxStyle } from '../Shared/FormStyle';
+import { buttonStyle, fieldStyle } from '../Shared/FormStyle';
 
 const {string, func} = PropTypes;
 

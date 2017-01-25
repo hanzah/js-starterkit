@@ -64,18 +64,31 @@
 
   .forgot_password_wrapper {
     float: right;
+    margin-top: 2px;
 
     >.forgot_password {
       font-family: $omnes-medium;
       font-size: 11px;
       color: #0568ae;
-      margin-top: 6px;
       text-decoration: none;
       cursor: pointer;
     }
 
   }
 
+}
+
+.password_wrapper{
+  position: relative;
+
+  .preview_password {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    cursor: pointer;
+    width: 20px;
+    z-index: 30;
+  }
 }
 
 .wrong_password {

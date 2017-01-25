@@ -35,6 +35,9 @@ export const fieldStyle = {
   },
   underlineFocusStyle: {
     borderColor: '#0073bc'
+  },
+    style: {
+    paddingRight: 20
   }
 }
 
