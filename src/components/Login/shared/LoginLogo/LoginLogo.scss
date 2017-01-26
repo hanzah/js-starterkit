@@ -1,0 +1,32 @@
+.logo_containter {
+  position: absolute;
+  top: 165px;
+  font-family: $omnes-bold;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  .logo {
+    >svg {
+      width: 100px;
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+  .product_title {
+    padding-top: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+.copyright_container {
+  position: absolute;
+  bottom: 0;
+  font-family: $omnes-regular;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 15px;
+  text-align: center;
+  width: 100%;
+}

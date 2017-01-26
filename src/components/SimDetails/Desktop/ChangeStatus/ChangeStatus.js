@@ -2,7 +2,6 @@ import React, {PropTypes, Component} from 'react';
 import Status from '../Status/Status';
 import cn from 'classnames';
 import {ConfirmSimEdit} from 'components/ConfirmSimEdit';
-
 import styles from './ChangeStatus.scss';
 
 const {func, object, bool} = PropTypes;

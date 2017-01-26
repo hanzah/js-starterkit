@@ -3,13 +3,12 @@ import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/imageSelector'
 import { FormattedNumber } from 'react-intl';
 
+import styles from './SimStatusDiagram.scss';
+
 const logo = ImageSelector(CurrentContext.theme, 'logo.png');
 const caret = ImageSelector(CurrentContext.theme, 'caret.png');
 
 const {object, func} = PropTypes;
-
-
-import styles from './SimStatusDiagram.scss';
 
 const SimStatusDiagram = ({sim, onSimStatusModalOpen}) => {
 	return (

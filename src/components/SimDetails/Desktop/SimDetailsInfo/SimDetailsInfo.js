@@ -1,5 +1,5 @@
-import React, {Component, PropTypes} from 'react';
-import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table';
+import React, { Component, PropTypes } from 'react';
+import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 import cn from 'classnames';
 
 import styles from './SimDetailsInfo.scss';
@@ -39,8 +39,8 @@ class SimDetailsInfo extends Component {
     return (
       <div
         className={cn(styles.siminfo_wrap, this.state.showDetails
-        ? styles.show
-        : '')}>
+          ? styles.show
+          : '')}>
         <h2 className={styles.table_title}>SIM DATA</h2>
         <div className={styles.table_wrap_top}>
           <Table selectable={this.state.selectable}>
@@ -55,14 +55,14 @@ class SimDetailsInfo extends Component {
         </div>
         {this.handleViewMoreText()
           ? <a
-              className={styles.view_table_info}
-              onClick={this.handleShowDetails}
-              title="View less">View less</a>
+            className={styles.view_table_info}
+            onClick={this.handleShowDetails}
+            title="View less">View less</a>
           : <a
             className={styles.view_table_info}
             onClick={this.handleShowDetails}
             title="View details">View details</a>
-}
+        }
       </div>
     );
   }
@@ -120,11 +120,11 @@ class SimDetailsInfo extends Component {
 
         <TableRow>
           <TableRowColumn>
-            <div className={styles.label}>COPY RULE<br/>(SECURE SIM ID)</div>
+            <div className={styles.label}>COPY RULE<br />(SECURE SIM ID)</div>
             <div className={styles.label_detail}>None</div>
           </TableRowColumn>
           <TableRowColumn>
-            <div className={styles.label}>COPY RULE<br/>(PASSWORD)</div>
+            <div className={styles.label}>COPY RULE<br />(PASSWORD)</div>
             <div className={styles.label_detail}>None</div>
           </TableRowColumn>
           <TableRowColumn>

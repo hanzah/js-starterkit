@@ -3,7 +3,8 @@
 	width: 100%;
 	padding-left: 24px;
 	overflow: hidden;
-	.buttons {
+	
+  .buttons {
 		float: left;
 		border: 1px solid rgb(229, 229, 229);
 		background-color: rgb(242, 242, 243);
@@ -13,17 +14,23 @@
 		margin-bottom: 19px;
 		text-align: center;
 		cursor: pointer;
-		&:nth-child(4) {
+		
+    &:nth-child(4) {
 			margin-left: 24px;
 			margin-right: 24px;
 		}
+
 		svg {
 			height: 39px;
 			fill: #F2F2F2;
-			>path {
+			
+      >path {
 				fill: #0574ac;
 			}
+
 		}
+    
 	}
+
 }
 

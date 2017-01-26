@@ -7,11 +7,11 @@ import Tabs from './tabs';
 import CurrentContext from 'utils/currentContext'
 import ImageSelector from 'utils/imageSelector'
 
+import styles from './SimDetails.scss';
+
 import { FormattedDate } from 'react-intl'
 
 const pending = ImageSelector(CurrentContext.theme, 'pending.png');
-
-import styles from './SimDetails.scss';
 
 const {object, bool} = PropTypes
 

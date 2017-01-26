@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 import {
   Table,
@@ -33,14 +33,14 @@ class SimTable extends React.Component {
       <div>
         <ReactCSSTransitionGroup
           transitionName={{
-          enter: styles.appear,
-          enterActive: styles.appear_active,
-          leave: styles.leave,
-          leaveActive: styles.leave_active
-        }}
+            enter: styles.appear,
+            enterActive: styles.appear_active,
+            leave: styles.leave,
+            leaveActive: styles.leave_active
+          }}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
-				>
+          >
 
           {this.props.showOptions ? <SimOptions key={1} /> : null}
 
@@ -52,8 +52,8 @@ class SimTable extends React.Component {
             fixedHeader
             multiSelectable
             onRowSelection={this.onRowSelection}
-						onCellClick={this.onCellClick}
-					>
+            onCellClick={this.onCellClick}
+            >
             <TableHeader>
               {this.renderHeader()}
             </TableHeader>
@@ -93,7 +93,7 @@ class SimTable extends React.Component {
   }
 
   onRowSelection = (selectedRows) => {
-    if(this.skipSelection){
+    if (this.skipSelection) {
       this.skipSelection = false
       return
     }
@@ -115,11 +115,11 @@ class SimTable extends React.Component {
     this.props.onRowSelection(sims)
   }
 
-	onCellClick = (row, column) => {
-		if(column === -1) return
+  onCellClick = (row, column) => {
+    if (column === -1) return
     this.skipSelection = true
-		this.props.gotToSimDetails(this.props.sims[row]);
-	}
+    this.props.gotToSimDetails(this.props.sims[row]);
+  }
 }
 
 SimTable.propTypes = {
@@ -127,7 +127,7 @@ SimTable.propTypes = {
   onRowSelection: func,
   selectedSims: object,
   showOptions: bool,
-	gotToSimDetails: func
+  gotToSimDetails: func
 }
 
 export default SimTable;

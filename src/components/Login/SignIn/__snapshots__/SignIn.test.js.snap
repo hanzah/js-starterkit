@@ -1,0 +1,111 @@
+exports[`<SignIn/> should render a component 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    data-spec="sign-in-screen">
+    <Login
+        form={
+            <SignInForm
+                subtitle="Please enter your email and password."
+                title="Log In" />
+        }
+        logo={
+            <LoginLogo
+                productName="PRODUCT TITLE" />
+        } />
+</div>,
+  "nodes": Array [
+    <div
+      data-spec="sign-in-screen">
+      <Login
+            form={
+                  <SignInForm
+                        subtitle="Please enter your email and password."
+                        title="Log In" />
+            }
+            logo={
+                  <LoginLogo
+                        productName="PRODUCT TITLE" />
+            } />
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance":  {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <SignIn />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          data-spec="sign-in-screen">
+          <Login
+                    form={
+                              <SignInForm
+                                        subtitle="Please enter your email and password."
+                                        title="Log In" />
+                    }
+                    logo={
+                              <LoginLogo
+                                        productName="PRODUCT TITLE" />
+                    } />
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          data-spec="sign-in-screen">
+          <Login
+                    form={
+                              <SignInForm
+                                        subtitle="Please enter your email and password."
+                                        title="Log In" />
+                    }
+                    logo={
+                              <LoginLogo
+                                        productName="PRODUCT TITLE" />
+                    } />
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <SignIn />,
+}
+`;

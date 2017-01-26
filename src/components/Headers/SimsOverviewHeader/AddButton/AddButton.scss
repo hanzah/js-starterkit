@@ -1,0 +1,39 @@
+.floater_menu {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(50%);
+
+  >div {
+    margin-right: 20px;
+
+    >div:first-child {
+
+      >button {
+        background-color: #80c342 !important;
+      }
+    }
+    
+    >div {
+
+      >div {
+
+        >button {
+          background-color: rgb(242, 242, 242) !important;
+          
+          >div {
+            
+            >div {
+              
+              >svg {
+                fill: #0073bc !important;
+                width: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
