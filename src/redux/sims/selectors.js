@@ -11,3 +11,11 @@ export const getSim = (state, number) => {
 export const getSelectedSims = (state) => {
   return state.ui.selectedSims
 }
+
+export const getSimStatusModalStatus = (state) => {
+  return state.ui.simStatusModalOpen
+}
+
+export const getSimEditModalStatus = (state) => {
+  return state.ui.simEditModalOpen
+}

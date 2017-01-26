@@ -30,6 +30,7 @@
   "dependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-eslint": "^7.1.1",
+    "babel-polyfill": "^6.22.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-runtime": "^6.20.0",
     "classnames": "^2.2.5",
@@ -53,6 +54,7 @@
     "redux": "^3.6.0",
     "redux-actions": "^1.2.0",
     "redux-form": "^6.4.3",
+    "redux-form-material-ui": "^4.1.2",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.1.1",
     "url-loader": "^0.5.7"

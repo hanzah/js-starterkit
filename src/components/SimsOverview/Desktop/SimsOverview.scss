@@ -1,0 +1,109 @@
+@import "~components/SimsOverview/SimsOverview";
+.mc_sim_table {
+	font-family: $omnes-light !important;
+	font-size: 13px !important;
+	color: #333 !important;
+	>thead {
+		border-bottom: 1px solid transparent !important;
+		>tr {
+			border-bottom: 1px solid transparent !important;
+			>th {
+				&:first-child {
+					svg {
+						fill: rgb(5, 116, 172) !important;
+					}
+				}
+				font-family: $omnes-medium !important;
+				font-size: 12px !important;
+				color: #666666 !important;
+			}
+		}
+	}
+	>tbody {
+		>tr {
+			border-bottom: 1px solid rgb(242, 242, 242) !important;
+			&:nth-child(odd) {
+				background-color: rgb(250, 250, 250) !important;
+			}
+			>td {
+				cursor: pointer;
+				&:first-child {
+					svg {
+						fill: rgb(5, 116, 172) !important;
+					}
+				}
+				&:last-child {
+					font-family: $omnes-medium !important;
+					>div {
+						position: relative;
+						display: inline;
+						padding-left: 25px;
+						>span {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							margin-top: -6.5px;
+							border-radius: 50%;
+							width: 13px;
+							height: 13px;
+							display: block;
+						}
+					}
+					&.active {
+						>div {
+							>span {
+								background-color: rgb(142, 209, 105);
+							}
+						}
+					}
+					&.pending {
+						>div {
+							>span {
+								background-color: rgb(244, 175, 0);
+							}
+						}
+					}
+					&.inactive {
+						>div {
+							>span {
+								background-color: rgb(153, 153, 153);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.div_shadow {
+	position: absolute;
+	left: -2px;
+	width: 100%;
+	height: 7px;
+	top: 49px;
+	background-color: transparent;
+	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+
+.table_wrap {
+	float: left;
+	position: relative;
+}
+
+.appear {
+	height: 0px;
+	&.appear_active {
+		height: 81px;
+		transition: height .5s ease-out;
+	}
+}
+
+.leave {
+	height: 81px;
+	&.leave_active {
+		height: 0px;
+		transition: height .5s ease-in;
+	}
+}

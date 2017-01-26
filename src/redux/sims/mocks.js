@@ -10,13 +10,13 @@ export default [{
 		plan: 'AT&T Data Rate Plan',
 		network: 'AT&T',
 		country: 'USA',
-		status: 'ACTIVATION READY'
+		status: 'SUSPENDED'
 	},
 	{
 		number: '8901170425230326677',
 		plan: 'AT&T Data Rate Plan',
 		network: 'AT&T',
 		country: 'USA',
-		status: 'INACTIVE'
+		status: 'PURGED'
 	}
 ]

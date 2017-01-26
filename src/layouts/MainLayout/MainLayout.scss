@@ -1,0 +1,23 @@
+.mc_global_container {
+  float: left;
+  width: 100%;
+  height: auto;
+	transition: padding .5s linear;
+	padding-left: 0;
+}
+
+.mc_global_container_padding {
+	transition: padding .5s linear;
+	padding-left: 130px;
+}
+
+.component_wrapper {
+  float: left;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  box-shadow: -3px 0px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 20;
+  background-color:#ffffff;
+}

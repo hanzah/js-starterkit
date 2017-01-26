@@ -1,0 +1,186 @@
+.siminfo_detail {
+	float: left;
+	width: 100%;
+	position: relative;
+
+	.sim_serial_number {
+		font-family: $omnes-medium;
+		font-size: 21px;
+		color: #333333;
+	}
+
+	.add_nickname {
+		cursor: pointer;
+		font-family: $omnes-medium;
+		font-size: 14px;
+		color: #0574ac;
+	}
+
+	.sim_graph {
+		float: left;
+		width: 100%;
+
+		.mbs {
+			float: left;
+			text-align: center;
+			width: 142px;
+
+			.circle {
+				border-radius: 50%;
+				background: -moz-linear-gradient(45deg, rgba(0, 181, 81, 1) 0%, rgba(113, 213, 76, 1) 100%);
+				background: -webkit-linear-gradient(45deg, rgba(0, 181, 81, 1) 0%, rgba(113, 213, 76, 1) 100%);
+				background: linear-gradient(45deg, rgba(0, 181, 81, 1) 0%, rgba(113, 213, 76, 1) 100%);
+				width: 142px;
+				height: 142px;
+				display: inline-block;
+				margin-bottom: 13px;
+
+				>div {
+					float: left;
+					width: 134px;
+					height: 134px;
+					margin-left: 4px;
+					margin-top: 4px;
+					background-color: #fff;
+					border-radius: 50%;
+					text-align: center;
+					display: table;
+
+					.circle_data {
+						display: table-cell;
+						vertical-align: middle;
+						width: 100%;
+						color: rgb(128, 195, 66);
+						transform: matrix( 1, 0, 0, 1.0000947510404, 0, 0);
+						-webkit-transform: matrix( 1, 0, 0, 1.0000947510404, 0, 0);
+						-ms-transform: matrix( 1, 0, 0, 1.0000947510404, 0, 0);
+						text-transform: uppercase;
+
+						>.number {
+
+							>span {
+
+                &:first-child{
+                  font-family: $omnes-medium;
+						      font-size: 26px;
+                }
+
+                &:last-child{
+                  font-family: $omnes-medium;
+                  font-size: 13px;
+                  padding-left:7px;
+                }
+
+							}
+
+						}
+
+            .status_state{
+              padding-top:2px;
+              font-family: $omnes-medium;
+							font-size: 12px;
+            }
+
+					}
+
+				}
+
+			}
+
+			.session_status {
+				width: 100%;
+				cursor: pointer;
+				user-select: none;
+
+				img {
+					position: absolute;
+          top:7px;
+          right:-11px;
+				}
+
+				span {
+					display: block;
+					font-family: $omnes-regular;
+					font-size: 12px;
+					color: #333333;
+
+          &:last-child{
+            display: inline;
+            position: relative;
+          }
+
+				}
+        
+			}
+		}
+
+		.brand_name {
+			float: left;
+			position: relative;
+			margin-left: 109px;
+			text-align: center;
+			width: 145px;
+
+			span {
+				display: block;
+				font-family: $omnes-regular;
+				font-size: 12px;
+				color: #333333;
+			}
+
+			.circle {
+				border: 2px solid rgb(242, 242, 242);
+				border-radius: 50%;
+				width: 142px;
+				height: 142px;
+				text-align: center;
+				display: table;
+				position: relative;
+				margin-bottom: 16px;
+
+				.logo {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
+				.connection_line {
+					position: absolute;
+					left: -109px;
+					top: 50%;
+					margin-top: -0.5px;
+					width: 109px;
+					border: 1px solid rgb(242, 242, 242);
+				}
+
+			}
+
+		}
+
+		.sim_profile {
+			cursor: pointer;
+			user-select: none;
+
+      span{
+
+        &:last-child{
+        display: inline;
+        position: relative;
+        }
+
+      }
+
+			img {
+				position: absolute;
+        top:7px;
+        right:-11px;
+			}
+
+		}
+
+	}
+
+	.sim_data {
+		float: left;
+		width: 60%;
+	}
+}

@@ -1,0 +1,66 @@
+.main_wrap {
+	float: left;
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+
+.sim_status_diagram {
+	float: left;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sim_details_info {
+	float: left;
+	width: 50%;
+}
+
+.pending_changes {
+	float: left;
+	width: 100%;
+	height: 50px;
+	background-color: rgb(179, 10, 60);
+	display: table;
+
+  .pending_img{
+    display:table-cell;
+    vertical-align: middle;
+    padding-left:16px;
+    width:55px;
+  }
+
+	.pending_text {
+		float: left;
+		display: table;
+    height: 100%;
+
+		div {
+      display: table-cell;
+      vertical-align: middle;
+
+			span {
+
+				&:first-child {
+					font-family: $omnes-medium;
+					font-size: 13px;
+					color: #fff;
+          display: block;
+				}
+
+				&:last-child {
+					font-family: $omnes-regular;
+					font-size: 10px;
+					color: #fff;
+           display: block;
+				}
+
+			}
+
+		}
+
+	}
+
+}
