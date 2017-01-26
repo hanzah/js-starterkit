@@ -1,3 +1,3 @@
-import Desktop from './desktop/ConfirmSimEdit'
+import Desktop from './Desktop/ConfirmSimEdit'
 
 export const ConfirmSimEdit = Desktop

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import SearchBar from '../searchbar';
+import SearchBar from '../SearchBar';
 import UserMenu from 'components/headers/shared/UserMenu/UserMenu';
 
 import styles from './TopBarHeader.scss';
