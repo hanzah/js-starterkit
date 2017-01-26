@@ -13,8 +13,7 @@ export default {
 	devtool: 'source-map',
 	noInfo: false,
 	entry: {
-		babelPolyfill: 'babel-polyfill',
-		vendor: path.resolve(__dirname, 'src/vendor'),
+		vendor: ['babel-polyfill', path.resolve(__dirname, 'src/vendor')],
 		main: path.resolve(__dirname, 'src/index')
 	},
 	target: 'web',
