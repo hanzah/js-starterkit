@@ -1,7 +1,0 @@
-exports[`Welcome (Snapshot) Welcome renders hello world 1`] = `
-<div
-  className="">
-  Hello 
-  world
-</div>
-`;
