@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions'
 import * as Selectors from 'redux/selectors'
-import SimService from 'services/SimService'
+import * as SimService from 'services/SimService'
 
 import {
   SIMS_SELECTED,
