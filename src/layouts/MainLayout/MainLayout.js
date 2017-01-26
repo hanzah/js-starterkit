@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { DesktopSidebarComponent } from 'components/sidebar'
+import { DesktopSidebarComponent } from 'components/SideBar'
 import styles from './MainLayout.scss'
 import cn from 'classnames';
 

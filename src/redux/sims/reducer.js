@@ -1,15 +1,20 @@
 import { handleActions } from 'redux-actions'
 import mockSims from './mocks'
+import { findIndex } from 'lodash'
 import {
   SIMS_SELECTED,
-	TOGGLE_SIM_STATUS_MODAL
+	OPEN_SIM_STATUS_MODAL,
+	CLOSE_SIM_STATUS_MODAL,
+	TOGGLE_SIM_EDIT_MODAL,
+	SIM_UPDATE
 } from './constants'
 
 export const initialState = {
   list: mockSims,
 	ui: {
 		selectedSims: {},
-		simStatusModalOpen: false
+		simStatusModalOpen: false,
+		simEditModalOpen: false
 	}
 }
 
@@ -23,13 +28,44 @@ export default handleActions({
 			}
 		}
   },
-	[TOGGLE_SIM_STATUS_MODAL]: (state) => {
+	[TOGGLE_SIM_EDIT_MODAL]: (state) => {
     return {
 			...state,
 			ui: {
 				...state.ui,
-				simStatusModalOpen: !state.ui.simStatusModalOpen
+				simEditModalOpen: !state.ui.simEditModalOpen
 			}
 		}
-  }
+  },
+	[OPEN_SIM_STATUS_MODAL]: (state) => {
+		return {
+			...state,
+			ui: {
+				...state.ui,
+				simStatusModalOpen: true
+			}
+		}
+	},
+	[CLOSE_SIM_STATUS_MODAL]: (state) => {
+		return {
+			...state,
+			ui: {
+				...state.ui,
+				simStatusModalOpen: false
+			}
+		}
+	},
+	[SIM_UPDATE]: (state, action) => {
+		const index = findIndex(state.list, (item) => {
+			return item.number === action.payload.sim.number
+		})
+		return {
+			...state,
+			list: [
+				...state.list.slice(0, index),
+				action.payload.sim,
+				...state.list.slice(index + 1)
+			]
+		}
+	}
 }, initialState)

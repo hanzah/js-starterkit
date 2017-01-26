@@ -1,4 +1,34 @@
-exports[`Welcome Reducer should return changed state 1`] = `
+exports[`Welcome Reducer should return changed sim data 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "number": "8901170425230326675",
+      "status": "DEACTIVATED",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "SUSPENDED",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "PURGED",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+    "simEditModalOpen": false,
+    "simStatusModalOpen": false,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return changed sim edit modal state after toggle event 1`] = `
 Object {
   "list": Array [
     Object {
@@ -13,18 +43,85 @@ Object {
       "network": "AT&T",
       "number": "8901170425230326676",
       "plan": "AT&T Data Rate Plan",
-      "status": "ACTIVATION READY",
+      "status": "SUSPENDED",
     },
     Object {
       "country": "USA",
       "network": "AT&T",
       "number": "8901170425230326677",
       "plan": "AT&T Data Rate Plan",
-      "status": "INACTIVE",
+      "status": "PURGED",
     },
   ],
   "ui": Object {
-    "selectedSims": undefined,
+    "selectedSims": Object {},
+    "simEditModalOpen": true,
+    "simStatusModalOpen": false,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return changed sim scheduleData 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "number": "8901170425230326675",
+      "scheduleData": Object {
+        "date": 2017-01-26T00:21:30.865Z,
+      },
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "SUSPENDED",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "PURGED",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+    "simEditModalOpen": false,
+    "simStatusModalOpen": false,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return close sim status modal state after open event 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "SUSPENDED",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "PURGED",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+    "simEditModalOpen": false,
+    "simStatusModalOpen": false,
   },
 }
 `;
@@ -44,18 +141,53 @@ Object {
       "network": "AT&T",
       "number": "8901170425230326676",
       "plan": "AT&T Data Rate Plan",
-      "status": "ACTIVATION READY",
+      "status": "SUSPENDED",
     },
     Object {
       "country": "USA",
       "network": "AT&T",
       "number": "8901170425230326677",
       "plan": "AT&T Data Rate Plan",
-      "status": "INACTIVE",
+      "status": "PURGED",
     },
   ],
   "ui": Object {
     "selectedSims": Object {},
+    "simEditModalOpen": false,
+    "simStatusModalOpen": false,
+  },
+}
+`;
+
+exports[`Welcome Reducer should return open sim status modal state after open event 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326675",
+      "plan": "AT&T Data Rate Plan",
+      "status": "ACTIVE",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326676",
+      "plan": "AT&T Data Rate Plan",
+      "status": "SUSPENDED",
+    },
+    Object {
+      "country": "USA",
+      "network": "AT&T",
+      "number": "8901170425230326677",
+      "plan": "AT&T Data Rate Plan",
+      "status": "PURGED",
+    },
+  ],
+  "ui": Object {
+    "selectedSims": Object {},
+    "simEditModalOpen": false,
+    "simStatusModalOpen": true,
   },
 }
 `;

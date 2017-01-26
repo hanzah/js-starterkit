@@ -15,3 +15,7 @@ export const getSelectedSims = (state) => {
 export const getSimStatusModalStatus = (state) => {
   return state.ui.simStatusModalOpen
 }
+
+export const getSimEditModalStatus = (state) => {
+  return state.ui.simEditModalOpen
+}

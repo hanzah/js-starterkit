@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { DesktopMediaQuery } from 'utils/CustomMediaQuery'
-import { DesktopSimDetails } from 'components/simdetails'
-import DesktopSimDetailsHeader from 'components/headers/simdetailsheader'
+import { DesktopSimDetails } from 'components/SimDetails'
+import DesktopSimDetailsHeader from 'components/headers/SimDetailsHeader'
 
 const { object } = PropTypes
 

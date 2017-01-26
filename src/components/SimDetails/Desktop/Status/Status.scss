@@ -80,32 +80,12 @@
 		background-image: -ms-linear-gradient( 45deg, rgb(51, 51, 51) 0%, rgb(90, 90, 90) 100%);
 		border-color: rgb(51, 51, 51);
 	}
+}
 
-	.circle_data {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		width: 100%;
-		color: #fff;
-
-		>.number {
-			font-family: $omnes-medium;
-			font-size: 30px;
-
-			>span {
-				font-family: $omnes-medium;
-				font-size: 13px;
-				padding-left: 7px;
-			}
-
-		}
-
-		.status_state {
-			font-family: $omnes-medium;
-			font-size: 12px;
-		}
-
-	}
+.active {
+	background-image: -moz-linear-gradient( 45deg, rgb(76, 169, 12) 0%, rgb(113, 213, 76) 100%);
+	background-image: -webkit-linear-gradient( 45deg, rgb(76, 169, 12) 0%, rgb(113, 213, 76) 100%);
+	background-image: -ms-linear-gradient( 45deg, rgb(76, 169, 12) 0%, rgb(113, 213, 76) 100%);
 }
 
 .suspend {

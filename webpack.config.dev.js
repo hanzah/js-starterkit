@@ -12,6 +12,7 @@ export default {
 	devtool: 'inline-source-map',
 	noInfo: false,
 	entry: [
+		'babel-polyfill',
 		path.resolve(__dirname, 'src/index')
 	],
 	target: 'web',
