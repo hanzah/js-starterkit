@@ -30,6 +30,6 @@ describe('Welcome Reducer', () => {
 
 	it('should return changed sim scheduleData', () => {
 		expect(reducer(initialState, { type: SIM_UPDATE, payload: { sim: {number: initialState.list[0].number,
-																																scheduleData: {date: new Date()}}}})).toMatchSnapshot();
+																																scheduleData: {date: new Date(12345678)}}}})).toMatchSnapshot();
 	});
 });
